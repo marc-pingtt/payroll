@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="monthly_payroll_summary_report">
+            <t t-call="web.html_container">
+                <t t-call="web.basic_layout">
+                    <div class="text-center">
+                        <span>
+                            <h5>
+                                <t t-esc="data['company'].name"/>
+                            </h5>
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <span>
+                            <h3>
+                                PAYROLL SUMMARY REPORT
+                            </h3>
+                        </span>
+                    </div>
+                    <br/>
+
+                    <div style="right:20px; text-align:right">
+                        <span>Year :
+                            <t t-esc="data['year']"/>
+                        </span>
+                    </div>
+                    <br/>
+                    <div class="page summary-table">
+                        <table class="table  dark-border" width="861" border="2">
+                            <tbody>
+                                <tr style="text-align:center; font-size: 18px; font-weight: bold;">
+                                    <th class="t-head">ID</th>
+                                    <th>EMPLOYEE</th>
+                                    <th>DATE</th>
+                                    <th>RATE</th>
+                                    <th>HRS/DAYS/
+                                        <br/>UNITS
+                                    </th>
+                                    <th>BASIC</th>
+                                    <th>OT/JOBS</th>
+                                    <th>ADDITIONS</th>
+                                    <th>GROSS</th>
+                                    <th>OTHER/<br/>DEDUCTIONS
+                                    </th>
+                                    <th>LOANS</th>
+                                    <th>NIS</th>
+                                    <th>HSUR</th>
+                                    <th>PAYE</th>
+                                    <th>TOTAL DED</th>
+                                    <th>NET</th>
+                                </tr>
+                                <t t-foreach="summary_report_data" t-as="o">
+                                    <t t-foreach="o['main_lines']" t-as="depart">
+                                        <t t-foreach="o['lines']" t-as="d">
+                                            <t t-if="depart[0].id  == d[0].department_id.id ">
+                                                <tr style="text-align:center; font-size: 18px; ">
+                                                    <td>
+                                                        <t t-esc="d[0].id"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[0].name"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[1]"/>
+                                                    </td>
+                                                    <td>
+                                                        <!--                                                        <t t-esc="d[1]"/>-->
+                                                    </td>
+                                                    <td>
+                                                        <!--                                                        <t t-esc="d[2]"/>-->
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[0].contract_id.wage"/>
+                                                    </td>
+                                                    <td>
+                                                        <!--                                                        <t t-esc="d[3]"/>-->
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[2]"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[3]"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[7]"/>
+                                                    </td>
+                                                    <td>
+                                                        <!--                                                        <t t-esc="d[2]"/>-->
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[4]"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[5]"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[6]"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[8]"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[9]"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </t>
+
+                                        <tr>
+                                            <td colspan="2"
+                                                style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="depart[0].name"/>
+                                            </td>
+                                            <td colspan="2"
+                                                style="text-align:center; font-size: 18px; font-weight: bold;">Total
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <!--                                                <t t-esc="depart[1]"/>-->
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="depart[1]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <!--                                                <t t-esc="depart[2]"/>-->
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="depart[2]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="depart[3]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="depart[7]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <!--                                                <t t-esc="depart[8]"/>-->
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="depart[4]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="depart[5]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="depart[6]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="depart[8]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="depart[11]"/>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-align:left; font-size: 14px; font-weight: bold;">
+                                            <td colspan="5">Total Number of Employees in dept:</td>
+                                            <td colspan="11">
+                                                <t t-esc="depart[10]"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-foreach="o['summary_lines']" t-as="summary">
+                                        <tr>
+                                            <td colspan="3"
+                                                style="text-align:center; font-size: 20px; font-weight: bold;">
+                                                Grand Total
+                                            </td>
+                                            <td
+                                                    style="text-align:center; font-size: 18px; font-weight: bold;">
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <!--                                                <t t-esc="summary[1]"/>-->
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="summary[0]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <!--                                                <t t-esc="depart[2]"/>-->
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="summary[1]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="summary[2]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="summary[3]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <!--                                                <t t-esc="summary[4]"/>-->
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="summary[4]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="summary[5]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="summary[6]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="summary[7]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="summary[8]"/>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-align:left; font-size: 14px; font-weight: bold;">
+                                            <td colspan="5">Total Number of Employees</td>
+                                            <td colspan="11">
+                                                <t t-esc="summary[9]"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <div class="row" style="padding-top:30px; padding-left:160px; ">
+                            <div class="col-6">
+                                <div class="d-flex" style="width:100%;font-size:17px;padding-right:100px;">
+                                    <p style="width:150px;font-weight: bold;">Prepared By:</p>
+                                    <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;position:relative">
+                                        <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
+                                    </div>
+
+                                    <p style="width:150px;font-weight: bold;">Date:</p>
+                                    <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;position:relative">
+                                        <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:30px; padding-left:160px; ">
+                            <div class="col-6">
+                                <div class="d-flex" style="width:100%;font-size:17px;padding-right:100px;">
+                                    <p style="width:150px;font-weight: bold;">Verified By:</p>
+                                    <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;position:relative">
+                                        <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
+                                    </div>
+
+                                    <p style="width:150px;font-weight: bold;">Date:</p>
+                                    <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;position:relative">
+                                        <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:30px; padding-left:160px; ">
+                            <div class="col-6">
+                                <div class="d-flex" style="width:100%;font-size:17px;padding-right:100px;">
+                                    <p style="width:150px;font-weight: bold;">Approved By 1:</p>
+                                    <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;position:relative">
+                                        <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
+                                    </div>
+
+                                    <p style="width:150px;font-weight: bold;">Date:</p>
+                                    <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;position:relative">
+                                        <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:30px; padding-left:160px; ">
+                            <div class="col-6">
+                                <div class="d-flex" style="width:100%;font-size:17px;padding-right:100px;">
+                                    <p style="width:150px;font-weight: bold;">Approved By 2:</p>
+                                    <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;position:relative">
+                                        <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
+                                    </div>
+
+                                    <p style="width:150px;font-weight: bold;">Date:</p>
+                                    <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;position:relative">
+                                        <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:30px; padding-left:160px; ">
+                            <div class="col-6">
+                                <div class="d-flex" style="width:100%;font-size:17px;padding-right:100px;">
+                                    <p style="width:150px;font-weight: bold;">Released By:</p>
+                                    <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;position:relative">
+                                        <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
+                                    </div>
+
+                                    <p style="width:150px;font-weight: bold;">Date:</p>
+                                    <div style="border-bottom: 1px solid black;width:225px;height:30px;paddi ng-left:100px;position:relative">
+                                        <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

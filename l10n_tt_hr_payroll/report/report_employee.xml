@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_employee">
+            <t t-call="web.html_container">
+
+                <t t-call="web.basic_layout">
+                    <t t-foreach="docs" t-as="o">
+                        <div class="td4-table">
+                            <table class="table  dark-border" width="861" border="1">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="9">
+                                            <div class="row">
+                                                <div class="col-3 mt-4">
+                                                    <img class="ml-3"
+                                                         src="/payroll_reports/static/src/img/report icon.png"
+                                                         alt="Logo"
+                                                         style="width:35%"/>
+                                                </div>
+                                                <div class="col-6 text-center govern-details">
+                                                    <div class="mt-3">
+                                                        <span class="text-center">GOVERNMENT OF THE REPUBLIC OF
+                                                            TRINIDAD
+                                                            &amp; TOBAGO
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <span>MINISTRY OF FINANCE, INLAND REVENUE DIVISION</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>
+                                                            <b>RETURN OF EMOLUMENTS PAID AND PAY DEDUCTION</b>
+                                                        </span>
+                                                    </div>
+                                                    <div class="mb-2">
+                                                        <span style="font-size: 10px;">
+                                                            <b>Employee Note-Attach original
+                                                                only to Income Tax Return 2020
+                                                            </b>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <span>
+                                                            <i>PLEASE TYPE OR PRINT IN BLOCK LETTERS</i>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-3 text-center">
+                                                    <span style="font-size: 10px;">
+                                                        <b>TD4-Supplementary(Revised)</b>
+                                                    </span>
+                                                    <div class="mt-3">
+                                                        <h4>
+                                                            <span>
+                                                                <b>
+                                                                    <t t-esc="o.year"/>
+                                                                </b>
+                                                            </span>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="11" style="vertical-align: middle;max-width:50px">
+                                            <div class="vertical-text"
+                                                 style="-ms-transform: rotate(-90deg); /* IE 9 */ transform: rotate(-90deg);-webkit-transform: rotate(-90deg);white-space: nowrap;">
+                                                <b>TD4-
+                                                    <t t-esc="o.year"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td colspan="3" width="33%">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    <b>EMPLOYEE'S NAME AND RESIDENTIAL ADDRESS</b>
+                                                </span>
+                                            </div>
+                                            <div class="employee_name">
+                                                <span class="content-span">
+                                                    <t t-esc="o.employee_name"/>
+                                                </span>
+                                                <span class="content-span">
+                                                    <t t-esc="o.employee_address"/>
+                                                </span>
+                                            </div>
+                                            <div class="employee_address">
+                                                <span class="content-span">
+                                                    <div name="employee_address" class="">
+                                                        <!--                                                        <span class="employee_address" t-field="o.employee_address" t-options='{"widget": "contact", "fields": ["address"], "no_marker": true}'/>-->
+                                                        <span class="content-span">
+                                                            <t t-esc="o.employee_address"/>
+                                                        </span>
+
+                                                    </div>
+                                                </span>
+                                            </div>
+
+                                        </td>
+                                        <td colspan="2" width="33%">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    <b>EMPLOYER'S NAME AND ADDRESS</b>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span class="content-span ">
+                                                    <div name="company_address" class="mt-3">
+                                                        <span class="content-span">
+                                                            <t t-esc="o.employer_name"/>
+                                                        </span>
+                                                        <span class="content-span">
+                                                            <t t-esc="o.employer_address"/>
+                                                        </span>
+                                                        <!--                                                        <span class="company_address" t-field="o.company_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>-->
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td colspan="3" width="33%">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    <b>EMPLOYER'S STAMP AND INITIALS</b>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="36">
+                                            <div class="text-center">
+                                                <span class="content-span">Employee's BIR File Number</span>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    Employee's NIS Number
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    Employer's PAYE File Number
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    Employer's BIR File Number
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">
+                                                        <t t-esc="o.employee_bir_number"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">
+                                                        <t t-esc="o.employee_nis_number"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">
+                                                        <t t-esc="o.employer_paye_number"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">
+                                                        <t t-esc="o.employer_bir_number"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2" width="13%">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (1)
+                                                </span>
+                                            </div>
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    Total Deductions as per TD1
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td width="13%" rowspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (2)
+                                                </span>
+                                            </div>
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    Weeks Employed
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td width="29" rowspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (3)<br/>Remuneration before Deduction
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td width="31" rowspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (4) Commissions
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td width="35" rowspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (5)<br/>Taxable Allowance
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td width="463" colspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (6)<br/>Other Taxable Allowances
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td width="463" rowspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (7)<br/>Income relating to previous year(s) paid in current year
+                                                </span>
+                                            </div>
+                                            <!--                                            <div class="text-center">-->
+                                            <!--                                                <span class="content-span">-->
+                                            <!--                                                    Income relating to-->
+                                            <!--                                                </span>-->
+                                            <!--                                            </div>-->
+                                            <!--                                            <div class="text-center">-->
+                                            <!--                                                <span class="content-span">-->
+                                            <!--                                                    previous year(s)-->
+                                            <!--                                                </span>-->
+                                            <!--                                            </div>-->
+                                            <!--                                            <div class="text-center">-->
+                                            <!--                                                <span class="content-span">-->
+                                            <!--                                                    paid in current year-->
+                                            <!--                                                </span>-->
+                                            <!--                                            </div>-->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    Travelling
+                                                </span>
+
+                                            </div>
+                                        </td>
+                                        <td width="80">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    Other
+                                                </span>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <!--                                                    <t t-set="total_deduction_as_per_td1" t-value="o.get_total_deduction(data['year'])"/>-->
+                                                    <span class="">
+                                                        <t t-esc="o.total_deductions"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">
+                                                        <t t-esc="o.week_employed"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">
+                                                        <t t-esc="o.remuneration_before"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">0</span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class=""><t t-esc="o.taxable_allowance"/>0
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class=""><t t-esc="o.travel_allowance"/>0
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class=""><t t-esc="o.other_allowance"/>0
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">0</span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (8)<br/>Saving Plan Withdrawals of Contributions made by company
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td rowspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (9)
+                                                </span>
+                                            </div>
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    GROSS EARNINGS
+                                                </span>
+                                            </div>
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    [(3)-(8)]
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (10)
+                                                </span>
+                                            </div>
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    BIR Approved Non-Taxed Allowances and Benefits
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td rowspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (11)
+                                                    <br/>
+                                                    Employee's contribution to Company's Approved Pension Fund
+                                                    Plan/Scheme
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td colspan="2" rowspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (12)<br/>National Insurance Deducted
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td rowspan="2">
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    (13)<br/>Income Tax Deducted (PAYE)
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    Employer's Contribution to Approved Fund Contract
+                                                    <b>Sect.134(8)</b>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <span class="content-span">
+                                                    Travelling-Dispensation Only
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">0</span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <!--                                                    <t t-set="gross_earning" t-value="o.calculate_gross_earnings()"/>-->
+                                                    <span class="">
+                                                        <t t-esc="o.gross_earnings"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">0</span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">0</span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">0</span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">
+                                                        <t t-esc="round(o.nis_deduction,2)"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <b>
+                                                    <span class="">
+                                                        <t t-esc="o.paye_deduction"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="10">
+                                            <div class="text-center">
+                                                <span class="">
+                                                    (14)
+                                                </span>
+                                            </div>
+                                            <div class="text-center">
+                                                <span class="">
+                                                    Health Surcharge Calculation
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="43" colspan="2" height="60">
+                                            <div class="text-center"
+                                                 style="padding-top: 5px;  display: -webkit-box; display: flex; -webkit-align-self: center; align-self: center; align-items: center;">
+
+                                                <div class="text-left" style="width: 75%; margin-right: 10px;">
+                                                    <span class="content-span">
+                                                        Number of Weeks for which Health Surcharge was Deducted
+                                                    </span>
+                                                </div>
+                                                <b>
+                                                    <span style="padding: 2px; outline: 1px solid #000; display: block; height: 25px; max-height: 20px; position: relative; top: 10px;">
+                                                        <t t-esc="o.no_of_weeks_health"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="text-center"
+                                                 style="padding-top: 5px;  display: -webkit-box; display: flex; -webkit-align-self: center; align-self: center; align-items: center;">
+
+                                                <div class="text-center" style="width: 75%; margin-right: 10px;">
+                                                    <span class="content-span">
+                                                        Number of Weeks at $8.25
+                                                    </span>
+                                                </div>
+                                                <b>
+                                                    <span style="padding: 2px; outline: 1px solid #000; display: block; height: 25px; max-height: 20px; position: relative; top: 10px;">
+                                                        <t t-esc="round(o.no_of_weeks_health)"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="text-center"
+                                                 style="padding-top: 5px;  display: -webkit-box; display: flex; -webkit-align-self: center; align-self: center; align-items: center;">
+
+                                                <div class="text-center" style="width: 75%; margin-right: 10px;">
+                                                    <span class="content-span">
+                                                        Number of Weeks at $4.80
+                                                    </span>
+                                                </div>
+                                                <b>
+                                                    <span style="padding: 2px; outline: 1px solid #000; display: block; height: 25px; max-height: 20px; position: relative; top: 10px;">
+                                                        <t t-esc="round(o.no_of_weeks_at_4_80)"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="text-center"
+                                                 style="padding-top: 5px;  display: -webkit-box; display: flex; -webkit-align-self: center; align-self: center; align-items: center;">
+
+                                                <div class="text-center" style="width: 75%; margin-right: 10px;">
+                                                    <span class="content-span">
+                                                        Health Surcharge Deducted
+                                                    </span>
+                                                </div>
+                                                <b>
+                                                    <span style="padding: 2px; outline: 1px solid #000; display: block; height: 25px; max-height: 20px; position: relative; top: 10px;">
+                                                        <t t-esc="o.health_deductions"/>
+                                                    </span>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

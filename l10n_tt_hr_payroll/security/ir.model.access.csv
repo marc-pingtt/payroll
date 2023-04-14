@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nis_rates,access_nis_rates,model_nis_rates,hr_payroll.group_hr_payroll_user,1,1,0,0
+access_nis_rates_lines,access_nis_rates_lines,model_nis_rates_lines,hr_payroll.group_hr_payroll_user,1,1,1,1
+access_td4_report_wizard,access_td4_report_wizard,model_td4_report_wizard,hr_payroll.group_hr_payroll_user,1,1,1,1
+access_td4_edit,access_td4_edit,model_td4_edit,hr_payroll.group_hr_payroll_user,1,1,1,1
+access_tax_deductions,access_tax_deductions,model_tax_deductions,hr_payroll.group_hr_payroll_user,1,1,1,1
+access_tax_deduction_type,access_tax_deduction_type,model_tax_deduction_type,hr_payroll.group_hr_payroll_user,1,1,1,1
+access_salary_additions,accces_salary_additions,model_salary_additions,hr_payroll.group_hr_payroll_user,1,1,1,1
+access_salary_additions_type,accces_salary_additions_type,model_salary_additions_type,hr_payroll.group_hr_payroll_user,1,1,1,1
+access_tax_credits,accces_tax_credits,model_tax_credits,hr_payroll.group_hr_payroll_user,1,1,1,1
+access_tax_credits_type,accces_tax_credits_type,model_tax_credits_type,hr_payroll.group_hr_payroll_user,1,1,1,1
+access_payrun_report_wizard,accces_payrun_report_wizard,model_payrun_report_wizard,hr_payroll.group_hr_payroll_user,1,1,1,1
