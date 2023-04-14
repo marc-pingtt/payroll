@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="td4_payroll_report_wizard_form" model="ir.ui.view">
+            <field name="name">td4.report.wizard.form</field>
+            <field name="model">td4.report.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+<!--                    <group>-->
+<!--                        <label for="date_start" string="Period"/>-->
+<!--                        <div>-->
+<!--                            From<field name="date_start" class="oe_inline col-sm-5"/>-->
+<!--                            to<field name="date_end" class="oe_inline col-sm-5"/>-->
+<!--                        </div>-->
+<!--                    </group>-->
+                        <group>
+                            <field name="employee_ids" widget="many2many_tags" />
+                            <field name="year" />
+
+                        </group>
+                    <footer>
+                        <button string="Preview" name="preview_report" type="object" class="oe_highlight"/>
+                        <button string="Summary Report" name="report_summary" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="td4_payroll_report_wizard_action" model="ir.actions.act_window">
+            <field name="name">Print TD4 Payroll Report</field>
+            <field name="res_model">td4.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+    <menuitem id="menu_report_payroll_td4"
+        name="TD4 Report"
+        action="td4_payroll_report_wizard_action"
+        parent="hr_payroll.menu_hr_payroll_report"/>
+
+</odoo>

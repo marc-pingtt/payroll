@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_nis_rates_form" model="ir.ui.view">
+            <field name="name">nis.rates.form</field>
+            <field name="model">nis.rates</field>
+            <field name="arch" type="xml">
+                <form string="NIS Rates">
+                    <sheet>
+                        <notebook>
+                            <page name="nis_rate" string="NIS">
+                                <field name="nis_line_ids">
+                                    <tree >
+                                        <field name="earnings_class"/>
+                                        <field name="weekly_earnings"/>
+                                        <field name="monthly_earnings"/>
+                                        <field name="avg_weekly_earnings"/>
+                                        <field name="employees_weekly_contri"/>
+                                        <field name="employers_weekly_contri"/>
+                                        <field name="total_weekly_contri"/>
+                                        <field name="class_weekly"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+</odoo>

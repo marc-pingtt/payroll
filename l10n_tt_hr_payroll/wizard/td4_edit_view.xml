@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="td4_payroll_report_edit_tree" model="ir.ui.view">
+        <field name="name">td4.edit.tree</field>
+        <field name="model">td4.edit</field>
+        <field name="arch" type="xml">
+            <tree string="Channel" >
+                <field name="employee_name"/>
+                <field name="employee_bir_number"/>
+                <field name="employee_nis_number"/>
+                <field name="employer_name"/>
+                <field name="employer_paye_number"/>
+                <field name="employer_bir_number"/>
+            </tree>
+        </field>
+    </record>
+    <record id="td4_payroll_report_edit_form" model="ir.ui.view">
+        <field name="name">td4.edit.wizard.form</field>
+        <field name="model">td4.edit</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="employee_name"/>
+                        <field name="employee_address"/>
+                        <field name="employee_bir_number"/>
+                        <field name="employee_nis_number"/>
+                    </group>
+                    <group>
+                        <field name="employer_name"/>
+                        <field name="employer_address"/>
+                        <field name="employer_paye_number"/>
+                        <field name="employer_bir_number"/>
+                    </group>
+
+                    <group>
+                        <field name="total_deductions"/>
+                        <field name="week_employed"/>
+                        <field name="remuneration_before"/>
+                        <field name="commissions"/>
+                    </group>
+                    <group>
+                        <field name="taxable_allowance"/>
+                        <field name="travel_allowance"/>
+                        <field name="other_allowance"/>
+                        <field name="income_relate_previous"/>
+                    </group>
+                    <group>
+                        <field name="saving_plan"/>
+                        <field name="gross_earnings"/>
+                        <field name="employer_contribution"/>
+                        <field name="travel_dispensation"/>
+                    </group>
+                    <group>
+                        <field name="employee_contribution"/>
+                        <field name="nis_deduction"/>
+                        <field name="paye_deduction"/>
+                    </group>
+                    <group>
+                        <field name="no_of_weeks_health"/>
+                        <field name="no_of_weeks_at_8_25"/>
+                    </group>
+                    <group>
+                        <field name="no_of_weeks_at_4_80"/>
+                        <field name="health_deductions"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="monthly_payroll_addition_report">
+            <t t-call="web.html_container">
+                <!--                <t t-foreach="docs" t-as="o">-->
+                <t t-call="web.basic_layout">
+                    <div class="text-center">
+                        <span>
+                            <h5>
+                                <t t-esc="data['company']"/>
+                            </h5>
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <span>
+                            <h3>
+                                ADDITION REPORT
+                            </h3>
+                        </span>
+                    </div>
+                    <br/>
+                    <div style="right:20px; text-align:right">
+                        <span>Year :
+                            <t t-esc="data['year']"/>
+                        </span>
+                        <br/>
+                        <span>Month :
+                            <t t-esc="data['month_name']"/>
+                        </span>
+                    </div>
+                    <br/>
+                    <div class="page summary-table">
+                        <table class="table  dark-border" width="861" border="1">
+                            <tbody>
+                                <tr>
+                                    <th class="t-head">ID</th>
+                                    <th>Employee</th>
+                                    <th>RunDate</th>
+                                    <th>Addition</th>
+                                    <th>Comments</th>
+                                    <th>Amount</th>
+                                    <th>YTD Totals</th>
+                                </tr>
+                                <t t-foreach="summary_report_data" t-as="o">
+                                    <t t-foreach="o['main_lines']" t-as="code">
+                                        <t t-foreach="o['lines']" t-as="d">
+                                            <t t-if="d[1] == code[0]">
+                                                <tr>
+                                                    <td>
+                                                        <t t-esc="d[0].id"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[0].name"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[4]"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[1]"/>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <t t-esc="d[2]"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="d[3]"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </t>
+                                        <tr>
+                                            <td colspan="4"
+                                                style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="code[0]"/>
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">Total
+                                            </td>
+                                            <td style="text-align:center; font-size: 18px; font-weight: bold;">
+                                                <t t-esc="code[1]"/>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

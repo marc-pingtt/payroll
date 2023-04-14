@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_employee_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.view.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/group[position()=2]" position="after">
+                <group>
+                    <field name="bir_file_number"/>
+                    <field name="nis_number"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
