@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <template id="minimal_layout_inherit" inherit_id="web.minimal_layout">
-      <xpath expr="//head" position="inside">
-          <link rel="stylesheet" href="l10n_tt_hr_payroll/static/src/css/td4_report.css"/>
-          <link rel="stylesheet" href="l10n_tt_hr_payroll/static/src/css/summary_report.css"/>
-      </xpath>
-</template>
-</odoo>
