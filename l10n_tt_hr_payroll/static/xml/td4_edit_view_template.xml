@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template">
+    <t t-name="TD4Report">
+        <div class="">
+            <div>
+                <center>
+                    <h1 style="margin: 20px;">Comprehensive Report</h1>
+                </center>
+            </div>
+            <div>
+                <div class="filter_view_cl"/>
+            </div>
+            <div>
+                <div class="table_view_cl" style="width: 95%; margin: auto;"/>
+            </div>
+
+        </div>
+    </t>
+
+</templates>

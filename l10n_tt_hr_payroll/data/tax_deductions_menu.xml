@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="action_tax_deduction_type" model="ir.actions.act_window">
+        <field name="name">TAX Deduction Types</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tax.deduction.type</field>
+        <field name="view_id" ref="tax_deduction_type_list"/>
+    </record>
+
+    <menuitem id="tax_deduction_type_menu" action="action_tax_deduction_type"
+              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+              name="Tax Deduction Types"
+              sequence="1"/>
+</odoo>

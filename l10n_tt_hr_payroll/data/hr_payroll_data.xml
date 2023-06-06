@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="action_nis_rates" model="ir.actions.act_window">
+        <field name="name">NIS Rates</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">nis.rates</field>
+    </record>
+
+    <menuitem id="nis_rates_menu" action="action_nis_rates"
+              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+              sequence="1"/>
+
+    <!-- <record id="action_paye_rates" model="ir.actions.act_window">
+        <field name="name">PAYE Rates</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">paye.rates</field>
+    </record>
+
+    <menuitem id="paye_rates_menu" action="action_paye_rates"
+              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+              sequence="1"/> -->
+
+    <!-- <record id="action_health_surcharge_rates" model="ir.actions.act_window">
+        <field name="name">Health Surcharge Rates</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">health.surcharge.rates</field>
+    </record>
+
+    <menuitem id="health_surcharge_rates_menu" action="action_health_surcharge_rates"
+              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+              sequence="1"/> -->
+
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="0">
+        <record id="tt_tedexp_deduct" model="tax.deduction.type">
+            <field name="name">TERTIARY EDUCATION EXPENSES</field>
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_tedexp'))]"/>
+        </record>
+        <record id="tt_ftho_deduct" model="tax.deduction.type">
+            <field name="name">FIRST TIME HOME OWNER</field>
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_ftho'))]"/>
+        </record>
+        <record id="tt_docov_deduct" model="tax.deduction.type">
+            <field name="name">DEED OF COVENANT</field>
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_docov'))]"/>
+        </record>
+        <record id="tt_contrib_deduct" model="tax.deduction.type">
+            <field name="name">CONTRIBUTIONS/PREMIUMS PAID</field> 
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_contrib'))]"/>
+        </record>
+        <record id="tt_aom_deduct" model="tax.deduction.type">
+            <field name="name">ALIMONY / MAINTAINANCE</field> 
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_aom'))]"/>
+        </record>
+        <record id="tt_trav_exp_deduct" model="tax.deduction.type">
+            <field name="name">TRAVELLING EXPENSES</field> 
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_trav_exp'))]"/>
+        </record>
+        <record id="tt_swh_credit" model="tax.credits.type">
+            <field name="name">SOLAR WATER HEATER</field> 
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_swh_v'))]"/>
+        </record>
+        <record id="tt_cng_credit" model="tax.credits.type">
+            <field name="name">CNG KIT AND CYLINDER</field> 
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_cng_v'))]"/>
+        </record>
+        <record id="tt_ghc_credit" model="tax.credits.type">
+            <field name="name">GUEST HOUSE CONVERSION</field> 
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_ghc'))]"/>
+        </record>
+        <record id="tt_ntfsb_5_credit" model="tax.credits.type">
+            <field name="name">NATIONAL TAX SAVINGS BONDS MATURITY YEAR 5</field> 
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_ntfsb_5'))]"/>
+        </record>
+        <record id="tt_ntfsb_7_credit" model="tax.credits.type">
+            <field name="name">NATIONAL TAX SAVINGS BONDS MATURITY YEAR 7</field> 
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_ntfsb_7'))]"/>
+        </record>
+        <record id="tt_ntfsb_10_credit" model="tax.credits.type">
+            <field name="name">NATIONAL TAX SAVINGS BONDS MATURITY YEAR 10</field> 
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_ntfsb_10'))]"/>
+        </record>
+        <record id="tt_vcitc_credit" model="tax.credits.type">
+            <field name="name">VENTURE CAPITAL INVESTMENT</field> 
+            <field name="currency_id"  ref="base.TTD"/>
+            <field name="rule_parameter_ids" eval="[(4, ref('l10n_tt_hr_payroll.tt_vcitc_%'))]"/>
+        </record>  
+    </data>
+</odoo>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="additions_report_wizard_form" model="ir.ui.view">
+            <field name="name">additions_report_wizard_form</field>
+            <field name="model">additions.report.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="report_period_start"/>
+                        <field name="report_period_end"/>
+                    </group>
+                    <footer>
+                        <button string="Show Report" name="print_report" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="deductions_report_wizard_form" model="ir.ui.view">
+            <field name="name">deductions_report_wizard_form</field>
+            <field name="model">deductions.report.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="report_period_start"/>
+                        <field name="report_period_end"/>
+                    </group>
+                    <footer>
+                        <button string="Show Report" name="print_report" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="additions_report_action_window" model="ir.actions.act_window">
+            <field name="name">Print Additions Report</field>
+            <field name="res_model">additions.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="deductions_report_action_window" model="ir.actions.act_window">
+            <field name="name">Print Deductions Report</field>
+            <field name="res_model">deductions.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+    <menuitem id="menu_report_additions" action="additions_report_action_window"
+        parent="hr_payroll.menu_hr_payroll_report"
+        name="Additions Report"
+        sequence = "11"/>
+
+    <menuitem id="menu_report_deductions" action="deductions_report_action_window"
+        parent="hr_payroll.menu_hr_payroll_report"
+        name="Deductions Report"
+        sequence = "11"/>
+
+</odoo>

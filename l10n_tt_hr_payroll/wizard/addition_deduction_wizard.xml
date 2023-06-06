@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="addition_deduction_report_wizard_form" model="ir.ui.view">
+            <field name="name">addition.deduction.wizard.form</field>
+            <field name="model">additions.deductions.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                        <group>
+                            <field name="employee_ids" widget="many2many_tags" />
+                            <field name="year" />
+                            <field name="month" />
+
+                        </group>
+                    <footer>
+                        <button string="Additions" name="additions_report" type="object" class="oe_highlight"/>
+                        <button string="Deductions" name="deductions_report" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="additions_deductions_report_wizard_action" model="ir.actions.act_window">
+            <field name="name">Print Monthly Payroll Addition/Deduction Report</field>
+            <field name="res_model">additions.deductions.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+    <menuitem id="menu_report_addition_deductions"
+        name="Addition/Deduction Report"
+        action="additions_deductions_report_wizard_action"
+        parent="hr_payroll.menu_hr_payroll_report"/>
+</odoo>

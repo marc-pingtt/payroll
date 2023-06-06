@@ -1,0 +1,2248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    Contract-->
+    <record id="hr_contract_lur_demo" model="hr.contract">
+        <field name="name">Eli Lambert Contract</field>
+        <field name="date_start" eval="time.strftime('2020')+'-1-1'"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="job_id" model="hr.job"
+               eval="obj().env.ref('hr.employee_lur').job_id.id"/>
+        <field name="department_id" model="hr.department"
+               eval="obj().env.ref('hr.employee_lur').department_id.id"/>
+        <field eval="8000.0" name="wage"/>
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+    </record>
+
+    <record id="hr_contract_fpi_demo" model="hr.contract">
+        <field name="name">Audrey Peterson Contract</field>
+        <field name="date_start" eval="time.strftime('2020')+'-1-1'"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="job_id" model="hr.job"
+               eval="obj().env.ref('hr.employee_fpi').job_id.id"/>
+        <field name="department_id" model="hr.department"
+               eval="obj().env.ref('hr.employee_fpi').department_id.id"/>
+        <field eval="7540.0" name="wage"/>
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+    </record>
+    <record id="hr_contract_jog" model="hr.contract">
+        <field name="name">Beth Evans Contract</field>
+        <field name="date_start" eval="time.strftime('2020')+'-1-1'"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="job_id" model="hr.job"
+               eval="obj().env.ref('hr.employee_jog').job_id.id"/>
+        <field name="department_id" model="hr.department"
+               eval="obj().env.ref('hr.employee_jog').department_id.id"/>
+        <field eval="8500.0" name="wage"/>
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+    </record>
+
+    <record id="hr_contract.hr_contract_mit" model="hr.contract">
+        <field eval="10000.0" name="wage"/>
+    </record>
+    <record id="hr_payroll.hr_contract_firstcontract1" model="hr.contract">
+        <field eval="9700.0" name="wage"/>
+    </record>
+    <record id="hr_contract.hr_contract_han" model="hr.contract">
+        <field eval="9500.0" name="wage"/>
+    </record>
+
+    <!-- Payslip batch -->
+
+    <record id="hr_payslip_batch_jan_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('January 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-1-1')"/>
+        <field name="date_end" eval="time.strftime('2021-1-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_feb_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('February 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-2-1')"/>
+        <field name="date_end" eval="time.strftime('2021-2-28')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_mar_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('March 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-3-1')"/>
+        <field name="date_end" eval="time.strftime('2021-3-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_apr_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('April 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-2-1')"/>
+        <field name="date_end" eval="time.strftime('2021-4-30')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_may_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('May 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-5-1')"/>
+        <field name="date_end" eval="time.strftime('2021-5-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_jun_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('June 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-6-1')"/>
+        <field name="date_end" eval="time.strftime('2021-6-30')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_july_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('July 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-7-1')"/>
+        <field name="date_end" eval="time.strftime('2021-7-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_aug_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('August 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-8-1')"/>
+        <field name="date_end" eval="time.strftime('2021-8-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_sept_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('September 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-9-1')"/>
+        <field name="date_end" eval="time.strftime('2021-9-30')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_oct_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('October 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-10-1')"/>
+        <field name="date_end" eval="time.strftime('2021-10-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_nov_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('November 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-11-1')"/>
+        <field name="date_end" eval="time.strftime('2021-11-30')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_dec_2021" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('December 2021')"/>
+        <field name="date_start" eval="time.strftime('2021-12-1')"/>
+        <field name="date_end" eval="time.strftime('2021-12-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('June %Y')"/>
+        <field name="date_start" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_end" eval="time.strftime('%Y-6-30')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hr_payslip_batch_jan_2022" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('January %Y')"/>
+        <field name="date_start" eval="time.strftime('%Y-1-1')"/>
+        <field name="date_end" eval="time.strftime('%Y-1-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_feb_2022" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('February %Y')"/>
+        <field name="date_start" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_end" eval="time.strftime('%Y-2-28')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_mar_2022" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('March %Y')"/>
+        <field name="date_start" eval="time.strftime('%Y-3-1')"/>
+        <field name="date_end" eval="time.strftime('%Y-3-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_apr_2022" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('April %Y')"/>
+        <field name="date_start" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_end" eval="time.strftime('%Y-4-30')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_may_2022" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('May %Y')"/>
+        <field name="date_start" eval="time.strftime('%Y-5-1')"/>
+        <field name="date_end" eval="time.strftime('%Y-5-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_jun_2022" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('June %Y')"/>
+        <field name="date_start" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_end" eval="time.strftime('%Y-6-30')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_july_2022" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('July %Y')"/>
+        <field name="date_start" eval="time.strftime('%Y-7-1')"/>
+        <field name="date_end" eval="time.strftime('%Y-7-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_batch_aug_2022" model="hr.payslip.run">
+        <field name="name" eval="time.strftime('August %Y')"/>
+        <field name="date_start" eval="time.strftime('%Y-8-1')"/>
+        <field name="date_end" eval="time.strftime('%Y-8-31')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+
+    <!--    # Employee details-->
+    <record id="hr.employee_mit" model="hr.employee">
+        <field name="birthday">1993-06-10</field>
+        <field name="bir_file_number">1250600520-8</field>
+        <field name="nis_number">2156259803</field>
+    </record>
+    <record id="hr.employee_fpi" model="hr.employee">
+        <field name="birthday">1989-08-15</field>
+        <field name="bir_file_number">100024576-8</field>
+        <field name="nis_number">2365159500</field>
+    </record>
+    <record id="hr.employee_stw" model="hr.employee">
+        <field name="birthday">1983-01-25</field>
+        <field name="bir_file_number">1002548790-8</field>
+        <field name="nis_number">1251452899</field>
+    </record>
+    <record id="hr.employee_al" model="hr.employee">
+        <field name="birthday">1989-12-16</field>
+        <field name="bir_file_number">1001215590-8</field>
+        <field name="nis_number">2518794555</field>
+    </record>
+    <record id="hr.employee_al" model="hr.employee">
+        <field name="birthday">1989-12-16</field>
+        <field name="bir_file_number">1001215590-8</field>
+        <field name="nis_number">2518794555</field>
+    </record>
+    <record id="hr.employee_jog" model="hr.employee">
+        <field name="birthday">1990-07-28</field>
+        <field name="bir_file_number">1001510090-8</field>
+        <field name="nis_number">2519994555</field>
+    </record>
+    <record id="hr.employee_lur" model="hr.employee">
+        <field name="birthday">1993-03-08</field>
+        <field name="bir_file_number">1011250330-8</field>
+        <field name="nis_number">2598745550</field>
+    </record>
+    <record id="hr_payroll.hr_employee_payroll" model="hr.employee">
+        <field name="birthday">1985-02-17</field>
+        <field name="bir_file_number">1000002030-8</field>
+        <field name="nis_number">2500002550</field>
+    </record>
+    <record id="hr.employee_han" model="hr.employee">
+        <field name="birthday">1985-02-17</field>
+        <field name="bir_file_number">1000002030-8</field>
+        <field name="nis_number">2500002550</field>
+    </record>
+    <record id="hr.employee_admin" model="hr.employee">
+        <field name="birthday">1985-02-17</field>
+        <field name="bir_file_number">1000002030-8</field>
+        <field name="nis_number">2500002550</field>
+    </record>
+
+
+    <!--    # Company Details-->
+
+    <record id="base.main_company" model="res.company">
+        <field name="bir_file_number">1002546213-8</field>
+        <field name="paye_file_number">1026722239-8</field>
+    </record>
+<!--    Mitchell Admin  -->
+    <record id="hr_payslip_admin_jan_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('March 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-1-1')"/>
+        <field name="date_to" eval="time.strftime('2021-1-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP700</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_feb_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('February 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-2-1')"/>
+        <field name="date_to" eval="time.strftime('2021-2-28')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP701</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_mar_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('March 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-3-1')"/>
+        <field name="date_to" eval="time.strftime('2021-3-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP702</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_apr_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('April 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-4-1')"/>
+        <field name="date_to" eval="time.strftime('2021-4-30')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP703</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_may_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('May 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-5-1')"/>
+        <field name="date_to" eval="time.strftime('2021-5-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP704</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_jun_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('June 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-6-1')"/>
+        <field name="date_to" eval="time.strftime('2021-6-30')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP705</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_july_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('July 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-7-1')"/>
+        <field name="date_to" eval="time.strftime('2021-7-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP706</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_aug_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('August 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-8-1')"/>
+        <field name="date_to" eval="time.strftime('2021-8-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP707</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_sept_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('September 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-9-1')"/>
+        <field name="date_to" eval="time.strftime('2021-9-30')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP708</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_sept_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_oct_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('October 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-10-1')"/>
+        <field name="date_to" eval="time.strftime('2021-10-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP709</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_oct_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_nov_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('November 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-11-1')"/>
+        <field name="date_to" eval="time.strftime('2021-11-30')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP710</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_nov_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_dec_2021" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('December 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('2021-12-1')"/>
+        <field name="date_to" eval="time.strftime('2021-12-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP711</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_dec_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hr_payslip_admin_jan_2022" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('January %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('%Y-1-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-1-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP712</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_feb_2022" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('February %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-2-28')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP713</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_mar_2022" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('March %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('%Y-3-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-3-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP714</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_apr_2022" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('April %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('%Y-4-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-4-30')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP715</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_may_2022" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('May %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('%Y-5-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-5-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP716</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_jun_2022" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('June %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-6-30')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP717</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_july_2022" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('July %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('%Y-7-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-7-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP718</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_admin_aug_2022" model="hr.payslip">
+        <field name="name" eval="'Mitchell Admin ' + time.strftime('August %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_admin"/>
+        <field name="date_from" eval="time.strftime('%Y-8-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-8-31')"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP719</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+
+
+    <!--    # Payslip For Anita Oliver-->
+    <record id="hr_payslip_mit_jan_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('January 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-1-1')"/>
+        <field name="date_to" eval="time.strftime('2021-1-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP501</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_feb_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('February 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-2-1')"/>
+        <field name="date_to" eval="time.strftime('2021-2-28')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP502</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_mar_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('March 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-3-1')"/>
+        <field name="date_to" eval="time.strftime('2021-3-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP503</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_apr_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('April 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-4-1')"/>
+        <field name="date_to" eval="time.strftime('2021-4-30')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP504</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_may_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('May 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-5-1')"/>
+        <field name="date_to" eval="time.strftime('2021-5-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP505</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_jun_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('June 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-6-1')"/>
+        <field name="date_to" eval="time.strftime('2021-6-30')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP506</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_july_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('July 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-7-1')"/>
+        <field name="date_to" eval="time.strftime('2021-7-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP507</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_aug_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('August 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-8-1')"/>
+        <field name="date_to" eval="time.strftime('2021-8-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP508</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_sept_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('September 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-9-1')"/>
+        <field name="date_to" eval="time.strftime('2021-9-30')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP509</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_sept_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_oct_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('October 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-10-1')"/>
+        <field name="date_to" eval="time.strftime('2021-10-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP510</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_oct_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_nov_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('November 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-11-1')"/>
+        <field name="date_to" eval="time.strftime('2021-11-30')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP511</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_nov_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_dec_2021" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('December 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('2021-12-1')"/>
+        <field name="date_to" eval="time.strftime('2021-12-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP512</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_dec_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hr_payslip_mit_jan_2022" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('January %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('%Y-1-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-1-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP513</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_feb_2022" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('February %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-2-28')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP514</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_mar_2022" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('March %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('%Y-3-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-3-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP5015</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_apr_2022" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('April %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('%Y-4-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-4-30')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP516</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_may_2022" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('May %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('%Y-5-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-5-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP517</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_jun_2022" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('June %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-6-30')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP518</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_july_2022" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('July %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('%Y-7-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-7-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP519</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_mit_aug_2022" model="hr.payslip">
+        <field name="name" eval="'Anita Oliver ' + time.strftime('August %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_mit"/>
+        <field name="date_from" eval="time.strftime('%Y-8-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-8-31')"/>
+        <field name="employee_id" ref="hr.employee_mit"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP520</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <!--        # Payslip For Audrey Peterson-->
+
+    <record id="hr_payslip_fpi_jan_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('January 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-1-1')"/>
+        <field name="date_to" eval="time.strftime('2021-1-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP521</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_feb_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('February 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-2-1')"/>
+        <field name="date_to" eval="time.strftime('2021-2-28')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP522</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_mar_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('March 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-3-1')"/>
+        <field name="date_to" eval="time.strftime('2021-3-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP523</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_apr_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('April 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-4-1')"/>
+        <field name="date_to" eval="time.strftime('2021-4-30')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP524</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_may_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('May 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-5-1')"/>
+        <field name="date_to" eval="time.strftime('2021-5-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP525</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_jun_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('June 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-6-1')"/>
+        <field name="date_to" eval="time.strftime('2021-6-30')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP526</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_july_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('July 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-7-1')"/>
+        <field name="date_to" eval="time.strftime('2021-7-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP527</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_aug_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('August 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-8-1')"/>
+        <field name="date_to" eval="time.strftime('2021-8-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP528</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_sept_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('September 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-9-1')"/>
+        <field name="date_to" eval="time.strftime('2021-9-30')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP529</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_sept_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_oct_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('October 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-10-1')"/>
+        <field name="date_to" eval="time.strftime('2021-10-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP530</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_oct_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_nov_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('November 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-11-1')"/>
+        <field name="date_to" eval="time.strftime('2021-11-30')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP531</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_nov_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_dec_2021" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('December 2021')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('2021-12-1')"/>
+        <field name="date_to" eval="time.strftime('2021-12-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP532</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_dec_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hr_payslip_fpi_jan_2022" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('January %Y')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-1-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-1-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP533</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_feb_2022" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('February %Y')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-2-28')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP534</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_mar_2022" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('March %Y')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-3-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-3-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP535</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_apr_2022" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('April %Y')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-4-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-4-30')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP536</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_may_2022" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('May %Y')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-5-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-5-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP537</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_jun_2022" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('June %Y')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-6-30')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP538</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_july_2022" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('July %Y')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-7-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-7-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP539</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_fpi_aug_2022" model="hr.payslip">
+        <field name="name" eval="'Audrey Peterson ' + time.strftime('August %Y')"/>
+        <field name="contract_id" ref="hr_contract_fpi_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-8-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-8-31')"/>
+        <field name="employee_id" ref="hr.employee_fpi"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP540</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <!-- Eli Lambert -->
+    <record id="hr_payslip_lur_jan_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('January 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-1-1')"/>
+        <field name="date_to" eval="time.strftime('2021-1-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP601</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_feb_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('February 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-2-1')"/>
+        <field name="date_to" eval="time.strftime('2021-2-28')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP602</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_mar_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('March 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-3-1')"/>
+        <field name="date_to" eval="time.strftime('2021-3-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP603</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_apr_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('April 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-4-1')"/>
+        <field name="date_to" eval="time.strftime('2021-4-30')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP604</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_may_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('May 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-5-1')"/>
+        <field name="date_to" eval="time.strftime('2021-5-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP605</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_jun_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('June 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-6-1')"/>
+        <field name="date_to" eval="time.strftime('2021-6-30')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP606</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_july_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('July 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-7-1')"/>
+        <field name="date_to" eval="time.strftime('2021-7-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP607</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_aug_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('August 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-8-1')"/>
+        <field name="date_to" eval="time.strftime('2021-8-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP608</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_sept_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('September 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-9-1')"/>
+        <field name="date_to" eval="time.strftime('2021-9-30')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP609</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_sept_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_oct_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('October 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-10-1')"/>
+        <field name="date_to" eval="time.strftime('2021-10-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP610</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_oct_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_nov_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('November 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-11-1')"/>
+        <field name="date_to" eval="time.strftime('2021-11-30')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP611</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_nov_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_dec_2021" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('December 2021')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('2021-12-1')"/>
+        <field name="date_to" eval="time.strftime('2021-12-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP612</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_dec_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hr_payslip_lur_jan_2022" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert' + time.strftime('January %Y')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-1-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-1-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP613</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_feb_2022" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('February %Y')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-2-28')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP614</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_mar_2022" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('March %Y')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-3-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-3-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP615</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_apr_2022" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('April %Y')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-4-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-4-30')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP616</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_may_2022" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('May %Y')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-5-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-5-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP617</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_jun_2022" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('June %Y')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-6-30')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP618</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_july_2022" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('July %Y')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-7-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-7-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP619</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_lur_aug_2022" model="hr.payslip">
+        <field name="name" eval="'Eli Lambert ' + time.strftime('August %Y')"/>
+        <field name="contract_id" ref="hr_contract_lur_demo"/>
+        <field name="date_from" eval="time.strftime('%Y-8-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-8-31')"/>
+        <field name="employee_id" ref="hr.employee_lur"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP620</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <!--        # Payslip For Randall Lewis-->
+    <record id="hr_payslip_stw_jan_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('January 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-1-1')"/>
+        <field name="date_to" eval="time.strftime('2021-1-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP541</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_feb_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('February 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-2-1')"/>
+        <field name="date_to" eval="time.strftime('2021-2-28')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP542</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_mar_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('March 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-3-1')"/>
+        <field name="date_to" eval="time.strftime('2021-3-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP543</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_apr_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('April 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-4-1')"/>
+        <field name="date_to" eval="time.strftime('2021-4-30')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP544</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_may_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('May 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-5-1')"/>
+        <field name="date_to" eval="time.strftime('2021-5-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP545</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_jun_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('June 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-6-1')"/>
+        <field name="date_to" eval="time.strftime('2021-6-30')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP546</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_july_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('July 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-7-1')"/>
+        <field name="date_to" eval="time.strftime('2021-7-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP547</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_aug_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('August 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-8-1')"/>
+        <field name="date_to" eval="time.strftime('2021-8-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP548</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_sept_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('September 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-9-1')"/>
+        <field name="date_to" eval="time.strftime('2021-9-30')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP549</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_sept_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_oct_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('October 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-10-1')"/>
+        <field name="date_to" eval="time.strftime('2021-10-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP550</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_oct_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_nov_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('November 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-11-1')"/>
+        <field name="date_to" eval="time.strftime('2021-11-30')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP551</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_nov_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_dec_2021" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('December 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('2021-12-1')"/>
+        <field name="date_to" eval="time.strftime('2021-12-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP552</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_dec_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hr_payslip_stw_jan_2022" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('January %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('%Y-1-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-1-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP553</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_feb_2022" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('February %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-2-28')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP554</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_mar_2022" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('March %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('%Y-3-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-3-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP555</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_apr_2022" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('April %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('%Y-4-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-4-30')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP556</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_may_2022" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('May %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('%Y-5-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-5-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP557</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_jun_2022" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('June %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-6-30')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP558</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_july_2022" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('July %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('%Y-7-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-7-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP580</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_stw_aug_2022" model="hr.payslip">
+        <field name="name" eval="'Randall Lewis ' + time.strftime('August %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_stw"/>
+        <field name="date_from" eval="time.strftime('%Y-8-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-8-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP559</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <!--   Beth Evans  -->
+    <record id="hr_payslip_jog_jan_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('January 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-1-1')"/>
+        <field name="date_to" eval="time.strftime('2021-1-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP581</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_feb_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('February 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-2-1')"/>
+        <field name="date_to" eval="time.strftime('2021-2-28')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP582</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_mar_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('March 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-3-1')"/>
+        <field name="date_to" eval="time.strftime('2021-3-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP583</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_apr_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('April 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-4-1')"/>
+        <field name="date_to" eval="time.strftime('2021-4-30')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP584</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_may_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('May 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-5-1')"/>
+        <field name="date_to" eval="time.strftime('2021-5-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP585</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_jun_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('June 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-6-1')"/>
+        <field name="date_to" eval="time.strftime('2021-6-30')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP586</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_july_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('July 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-7-1')"/>
+        <field name="date_to" eval="time.strftime('2021-7-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP587</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_aug_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('August 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-8-1')"/>
+        <field name="date_to" eval="time.strftime('2021-8-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP588</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_sept_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('September 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-9-1')"/>
+        <field name="date_to" eval="time.strftime('2021-9-30')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP589</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_sept_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_oct_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('October 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-10-1')"/>
+        <field name="date_to" eval="time.strftime('2021-10-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP590</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_oct_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_nov_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('November 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-11-1')"/>
+        <field name="date_to" eval="time.strftime('2021-11-30')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP511</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_nov_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_dec_2021" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('December 2021')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('2021-12-1')"/>
+        <field name="date_to" eval="time.strftime('2021-12-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP592</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_dec_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hr_payslip_jog_jan_2022" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('January %Y')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('%Y-1-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-1-31')"/>
+        <field name="employee_id" ref="hr.employee_stw"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP593</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_feb_2022" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('February %Y')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-2-28')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP594</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_mar_2022" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('March %Y')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('%Y-3-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-3-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP595</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_apr_2022" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('April %Y')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('%Y-4-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-4-30')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP596</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_may_2022" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('May %Y')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('%Y-5-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-5-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP597</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_jun_2022" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('June %Y')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-6-30')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP598</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_july_2022" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('July %Y')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('%Y-7-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-7-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP599</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_jog_aug_2022" model="hr.payslip">
+        <field name="name" eval="'Beth Evans ' + time.strftime('August %Y')"/>
+        <field name="contract_id" ref="hr_contract_jog"/>
+        <field name="date_from" eval="time.strftime('%Y-8-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-8-31')"/>
+        <field name="employee_id" ref="hr.employee_jog"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP600</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <!--    # Payslip For Ronnie Hart-->
+    <record id="hr_payslip_al_jan_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('January 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-1-1')"/>
+        <field name="date_to" eval="time.strftime('2021-1-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP560</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_feb_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('February 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-2-1')"/>
+        <field name="date_to" eval="time.strftime('2021-2-28')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP561</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_mar_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('March 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-3-1')"/>
+        <field name="date_to" eval="time.strftime('2021-3-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP562</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_apr_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('April 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-4-1')"/>
+        <field name="date_to" eval="time.strftime('2021-4-30')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP563</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_may_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('May 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-5-1')"/>
+        <field name="date_to" eval="time.strftime('2021-5-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP564</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_jun_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('June 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-6-1')"/>
+        <field name="date_to" eval="time.strftime('2021-6-30')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP565</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_july_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('July 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-7-1')"/>
+        <field name="date_to" eval="time.strftime('2021-7-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP566</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_aug_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('August 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-8-1')"/>
+        <field name="date_to" eval="time.strftime('2021-8-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP567</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_sept_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('September 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-9-1')"/>
+        <field name="date_to" eval="time.strftime('2021-9-30')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP568</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_sept_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_oct_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('October 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-10-1')"/>
+        <field name="date_to" eval="time.strftime('2021-10-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP569</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_oct_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_nov_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('November 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-11-1')"/>
+        <field name="date_to" eval="time.strftime('2021-11-30')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP570</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_nov_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_dec_2021" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('December 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('2021-12-1')"/>
+        <field name="date_to" eval="time.strftime('2021-12-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP571</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_dec_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hr_payslip_al_jan_2022" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('January %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('%Y-1-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-1-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP572</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_feb_2022" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('February %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-2-28')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP573</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_mar_2022" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('March %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('%Y-3-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-3-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP574</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_apr_2022" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('April %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('%Y-4-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-4-30')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP575</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_may_2022" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('May %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('%Y-5-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-5-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP576</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_jun_2022" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('June %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-6-30')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP577</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_july_2022" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('July %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('%Y-7-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-7-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP578</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_al_aug_2022" model="hr.payslip">
+        <field name="name" eval="'Ronnie Hart ' + time.strftime('August %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_al"/>
+        <field name="date_from" eval="time.strftime('%Y-8-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-8-31')"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP579</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <!--  Roger Scott  -->
+    <record id="hr_payslip_rog_jan_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('January 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-1-1')"/>
+        <field name="date_to" eval="time.strftime('2021-1-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP621</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_feb_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('February 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-2-1')"/>
+        <field name="date_to" eval="time.strftime('2021-2-28')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP622</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_mar_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('March 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-3-1')"/>
+        <field name="date_to" eval="time.strftime('2021-3-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP623</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_apr_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('April 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-4-1')"/>
+        <field name="date_to" eval="time.strftime('2021-4-30')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP624</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_may_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('May 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-5-1')"/>
+        <field name="date_to" eval="time.strftime('2021-5-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP625</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_jun_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('June 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-6-1')"/>
+        <field name="date_to" eval="time.strftime('2021-6-30')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP626</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_july_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('July 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-7-1')"/>
+        <field name="date_to" eval="time.strftime('2021-7-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP627</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_aug_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('August 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-8-1')"/>
+        <field name="date_to" eval="time.strftime('2021-8-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP628</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_sept_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('September 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-9-1')"/>
+        <field name="date_to" eval="time.strftime('2021-9-30')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP629</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_sept_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_oct_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('October 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-10-1')"/>
+        <field name="date_to" eval="time.strftime('2021-10-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP630</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_oct_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_nov_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('November 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-11-1')"/>
+        <field name="date_to" eval="time.strftime('2021-11-30')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP631</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_nov_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_dec_2021" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('December 2021')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('2021-12-1')"/>
+        <field name="date_to" eval="time.strftime('2021-12-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP632</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_dec_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hr_payslip_rog_jan_2022" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('January %Y')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('%Y-1-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-1-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP633</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_feb_2022" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('February %Y')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-2-28')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP634</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_mar_2022" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('March %Y')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('%Y-3-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-3-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP635</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_apr_2022" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('April %Y')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('%Y-4-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-4-30')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP636</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_may_2022" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('May %Y')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('%Y-5-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-5-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP637</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_jun_2022" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('June %Y')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-6-30')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP638</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_july_2022" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('July %Y')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('%Y-7-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-7-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP639</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_rog_aug_2022" model="hr.payslip">
+        <field name="name" eval="'Roger Scott ' + time.strftime('August %Y')"/>
+        <field name="contract_id" ref="hr_payroll.hr_contract_firstcontract1"/>
+        <field name="date_from" eval="time.strftime('%Y-8-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-8-31')"/>
+        <field name="employee_id" ref="hr_payroll.hr_employee_payroll"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP640</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <!--  Walter Horton  -->
+    <record id="hr_payslip_han_jan_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('January 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-1-1')"/>
+        <field name="date_to" eval="time.strftime('2021-1-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP621</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_feb_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('February 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-2-1')"/>
+        <field name="date_to" eval="time.strftime('2021-2-28')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP622</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_mar_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('March 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-3-1')"/>
+        <field name="date_to" eval="time.strftime('2021-3-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP623</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_apr_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('April 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-4-1')"/>
+        <field name="date_to" eval="time.strftime('2021-4-30')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP624</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_may_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('May 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-5-1')"/>
+        <field name="date_to" eval="time.strftime('2021-5-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP625</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_jun_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('June 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-6-1')"/>
+        <field name="date_to" eval="time.strftime('2021-6-30')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP626</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_july_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('July 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-7-1')"/>
+        <field name="date_to" eval="time.strftime('2021-7-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP627</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_aug_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('August 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-8-1')"/>
+        <field name="date_to" eval="time.strftime('2021-8-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP628</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_sept_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('September 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-9-1')"/>
+        <field name="date_to" eval="time.strftime('2021-9-30')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP629</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_sept_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_oct_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('October 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-10-1')"/>
+        <field name="date_to" eval="time.strftime('2021-10-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP630</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_oct_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_nov_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('November 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-11-1')"/>
+        <field name="date_to" eval="time.strftime('2021-11-30')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP631</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_nov_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_dec_2021" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('December 2021')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('2021-12-1')"/>
+        <field name="date_to" eval="time.strftime('2021-12-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP632</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_dec_2021"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hr_payslip_han_jan_2022" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('January %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('%Y-1-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-1-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP633</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jan_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_feb_2022" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('February %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('%Y-2-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-2-28')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP634</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_feb_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_mar_2022" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('March %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('%Y-3-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-3-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP635</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_mar_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_apr_2022" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('April %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('%Y-4-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-4-30')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP636</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_apr_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_may_2022" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('May %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('%Y-5-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-5-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP637</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_may_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_jun_2022" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('June %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('%Y-6-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-6-30')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP638</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_jun_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_july_2022" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('July %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('%Y-7-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-7-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP639</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_july_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+    <record id="hr_payslip_han_aug_2022" model="hr.payslip">
+        <field name="name" eval="'Walter Horton ' + time.strftime('August %Y')"/>
+        <field name="contract_id" ref="hr_contract.hr_contract_han"/>
+        <field name="date_from" eval="time.strftime('%Y-8-1')"/>
+        <field name="date_to" eval="time.strftime('%Y-8-31')"/>
+        <field name="employee_id" ref="hr.employee_han"/>
+        <field name="struct_id" ref="hr_payroll.structure_002"/>
+        <field name="number">SLIP640</field>
+        <field name="payslip_run_id" ref="hr_payslip_batch_aug_2022"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+</odoo>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="tt_taxes" model="hr.salary.rule.category">
+            <field name="name">Taxes</field>
+            <field name="parent_id" ref="hr_payroll.DED"></field>
+            <field name="code">TAX</field>
+            <field name="note">Health Surcharge, PAYE, NIS</field>
+        </record>
+        <record id="tt_nis" model="hr.salary.rule.category">
+            <field name="name">NIS</field>
+            <field name="parent_id" ref="l10n_tt_hr_payroll.tt_taxes"></field>
+            <field name="code">NIS</field>
+            <field name="note"></field>
+        </record>
+
+        <record id="tt_add" model="hr.salary.rule.category">
+            <field name="name">Additions</field>
+            <field name ="parent_id" ref="hr_payroll.ALW"></field>
+            <field name="code">ADD</field>
+            <field name="note">Additions, Allowances</field>
+        </record>
+        <record id="tt_health_surcharge" model="hr.salary.rule">
+            <field name="category_id" ref="l10n_tt_hr_payroll.tt_taxes"></field>
+            <field name="code">HSUR</field>
+            <field name="struct_id" ref="l10n_tt_hr_payroll.tt_monthly_salary"/>
+            <field name="name">Health Surcharge</field>
+            <field name="appears_on_payslip">True</field>
+            <field name="sequence">102</field>
+            <field name="active">True</field>
+            <field name="condition_select">range</field>
+            <field name="condition_range">employee.age</field>
+            <field name="condition_range_min" eval="16"></field>
+            <field name="condition_range_max" eval="59"></field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = compute_health_surcharge(contract, payslip, rules) *-1</field>
+        </record>
+        <record id="tt_nis_contribution" model="hr.salary.rule">
+            <field name="category_id" ref="l10n_tt_hr_payroll.tt_nis"></field>
+            <field name="code">NIS</field>
+            <field name="struct_id" ref="l10n_tt_hr_payroll.tt_monthly_salary"/>
+            <field name="name">NIS Contributions</field>
+            <field name="appears_on_payslip">True</field>
+            <field name="sequence">103</field>
+            <field name="active">True</field>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = compute_nis(payslip, rules, contract) *-1</field>
+        </record>
+        <record id="tt_additions" model="hr.salary.rule">
+            <field name="category_id" ref="l10n_tt_hr_payroll.tt_add"></field>
+            <field name="code">ADD</field>
+            <field name="struct_id" ref="l10n_tt_hr_payroll.tt_monthly_salary"/>
+            <field name="name">Additions</field>
+            <field name="appears_on_payslip">True</field>
+            <field name="sequence">2</field>
+            <field name="active">True</field>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = compute_additions(payslip, contract, "salary_additions")</field>
+        </record>
+        <record id="tt_paye" model="hr.salary.rule">
+            <field name="category_id" ref="l10n_tt_hr_payroll.tt_taxes"></field>
+            <field name="code">PAYE</field>
+            <field name="struct_id" ref="l10n_tt_hr_payroll.tt_monthly_salary"/>
+            <field name="name">Pay As You Earn</field>
+            <field name="appears_on_payslip">True</field>
+            <field name="sequence">104</field>
+            <field name="active">True</field>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = compute_paye_salary(payslip, rules, contract) *-1</field>
+        </record>
+    </data>
+</odoo>

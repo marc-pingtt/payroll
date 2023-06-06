@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Contract View -->
+    <record id="other_income_sources_form" model="ir.ui.view">
+        <field name="name">Other Income Sources Form View</field>
+        <field name="model">other.income.sources</field>
+        <field name="arch" type="xml">   
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="amount"/>
+                        <field name="currency_id"/>
+                        <field name="year_valid_from"/>
+                        <field name="year_valid_to"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record> 
+</odoo>

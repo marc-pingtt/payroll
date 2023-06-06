@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+            <record id="additions_report_action" model="ir.actions.report">
+            <field name="name">Additions Report</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">l10n_tt_hr_payroll.additions_report_template</field>
+            <field name="report_file">l10n_tt_hr_payroll.additions_report_template</field>
+            <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="paperformat_us_letter_landscape"/>
+        </record>
+
+        <record id="deductions_report_action" model="ir.actions.report">
+            <field name="name">Deductions Report</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">l10n_tt_hr_payroll.deductions_report_template</field>
+            <field name="report_file">l10n_tt_hr_payroll.deductions_report_template</field>
+            <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="paperformat_us_letter_landscape"/>
+        </record>
+
+    </data>
+</odoo>
