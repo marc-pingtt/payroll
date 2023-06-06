@@ -23,3 +23,6 @@ class HrContract(models.Model):
 
     def get_valid_other_income_sources(self, date):
         return self.other_income_sources.filtered(lambda x: x.year_valid_from <= date and (x.year_valid_to is False or x.year_valid_to >= date))
+
+    def get_valid_other_income_sources_date_range(self, date_from, date_to):
+        return self.other_income_sources.filtered(lambda x: x.year_valid_from <= date_to and (x.year_valid_to is False or x.year_valid_to >= date_from))

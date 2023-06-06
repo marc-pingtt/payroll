@@ -33,7 +33,7 @@
             <field name="condition_range_min" eval="16"></field>
             <field name="condition_range_max" eval="59"></field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = compute_health_surcharge(contract, payslip, rules) *-1</field>
+            <field name="amount_python_compute">result = compute_health_surcharge(contract, payslip, categories) *-1</field>
         </record>
         <record id="tt_nis_contribution" model="hr.salary.rule">
             <field name="category_id" ref="l10n_tt_hr_payroll.tt_nis"></field>
@@ -45,7 +45,7 @@
             <field name="active">True</field>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = compute_nis(payslip, rules, contract) *-1</field>
+            <field name="amount_python_compute">result = compute_nis(payslip, categories, contract) *-1</field>
         </record>
         <record id="tt_additions" model="hr.salary.rule">
             <field name="category_id" ref="l10n_tt_hr_payroll.tt_add"></field>
@@ -59,6 +59,15 @@
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = compute_additions(payslip, contract, "salary_additions")</field>
         </record>
+        <!-- <record id="tt_gross" model="hr.salary.rule">
+            <field name="category_id" ref="hr_payroll.GROSS"></field>
+            <field name="name">Gross</field>
+            <field name="struct_id" ref="l10n_tt_hr_payroll.tt_monthly_salary"/>
+            <field name="code">GROSS</field>
+            <field name="sequence">99</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.BASIC + categories.ALW</field>
+        </record> -->
         <record id="tt_paye" model="hr.salary.rule">
             <field name="category_id" ref="l10n_tt_hr_payroll.tt_taxes"></field>
             <field name="code">PAYE</field>
@@ -69,7 +78,7 @@
             <field name="active">True</field>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = compute_paye_salary(payslip, rules, contract) *-1</field>
+            <field name="amount_python_compute">result = compute_paye_salary(payslip, categories, contract) *-1</field>
         </record>
     </data>
 </odoo>
