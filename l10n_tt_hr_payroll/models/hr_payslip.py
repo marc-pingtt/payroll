@@ -310,7 +310,8 @@ def compute_annual_deductions(payslip, annual_income, contract, nis_this_month):
         payslip, contract, annual_income)
     annual_deductions += compute_contributions(
         payslip, contract, nis_projected_deductions)
-    annual_deductions += abs(total_nis_tax_allowance_so_far)
+    # Refector to use rule parameter
+    annual_deductions += abs(total_nis_tax_allowance_so_far) * 0.7
     annual_deductions += compute_alimony_or_maintainance(payslip, contract)
     annual_deductions += compute_travelling_expenses(payslip, contract)
     annual_deductions += compute_guesthouse_conversion(payslip, contract)
