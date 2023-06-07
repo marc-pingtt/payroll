@@ -360,7 +360,7 @@ def compute_paye_salary(payslip, categories, contract):
         annual_paye = compute_annual_paye(
             chargable_income, chargable_income, payslip, compute_annual_tax_credits(payslip, contract))
     paye_year_to_date = payslip.sum('PAYE', datetime(
-        payslip.date_to.year, 1, 1), payslip.date_to) + relevant_by_amount(contract, payslip, "prior_paye_paid")
+        payslip.date_to.year, 1, 1), payslip.date_to) - abs(relevant_by_amount(contract, payslip, "prior_paye_paid"))
     remaining_paye = annual_paye - Decimal(abs(paye_year_to_date))
     monthly_paye = remaining_paye / periods_remaining
     return Decimal(monthly_paye)
