@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <record id="nis_ni184_report_wizard_action" model="ir.actions.report">
+            <field name="name">NIS NI184 Report</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">l10n_tt_hr_payroll.nis_ni184_template</field>
+            <field name="report_file">l10n_tt_hr_payroll.nis_ni184_template</field>
+            <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="paperformat_us_legal_landscape"/>
+        </record>
+
+        <record id="nis_ni187_report_wizard_action" model="ir.actions.report">
+            <field name="name">NIS NI187 Report</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">l10n_tt_hr_payroll.nis_ni187_template</field>
+            <field name="report_file">l10n_tt_hr_payroll.nis_ni187_template</field>
+            <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="paperformat_us_letter_portrait"/>
+        </record>
+       
+    </data>
+</odoo>

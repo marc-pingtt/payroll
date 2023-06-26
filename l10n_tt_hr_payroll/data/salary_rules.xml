@@ -59,15 +59,6 @@
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = compute_additions(payslip, contract, "salary_additions")</field>
         </record>
-        <!-- <record id="tt_gross" model="hr.salary.rule">
-            <field name="category_id" ref="hr_payroll.GROSS"></field>
-            <field name="name">Gross</field>
-            <field name="struct_id" ref="l10n_tt_hr_payroll.tt_monthly_salary"/>
-            <field name="code">GROSS</field>
-            <field name="sequence">99</field>
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = categories.BASIC + categories.ALW</field>
-        </record> -->
         <record id="tt_paye" model="hr.salary.rule">
             <field name="category_id" ref="l10n_tt_hr_payroll.tt_taxes"></field>
             <field name="code">PAYE</field>
@@ -80,5 +71,58 @@
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = compute_paye_salary(payslip, categories, contract) *-1</field>
         </record>
+
+        <record id="tt_weekly_health_surcharge" model="hr.salary.rule">
+            <field name="category_id" ref="l10n_tt_hr_payroll.tt_taxes"></field>
+            <field name="code">HSUR</field>
+            <field name="struct_id" ref="l10n_tt_hr_payroll.tt_weekly_salary"/>
+            <field name="name">Health Surcharge</field>
+            <field name="appears_on_payslip">True</field>
+            <field name="sequence">102</field>
+            <field name="active">True</field>
+            <field name="condition_select">range</field>
+            <field name="condition_range">employee.age</field>
+            <field name="condition_range_min" eval="16"></field>
+            <field name="condition_range_max" eval="59"></field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = compute_health_surcharge_weekly(contract, payslip, categories) *-1</field>
+        </record>
+        <record id="tt_weekly_nis_contribution" model="hr.salary.rule">
+            <field name="category_id" ref="l10n_tt_hr_payroll.tt_nis"></field>
+            <field name="code">NIS</field>
+            <field name="struct_id" ref="l10n_tt_hr_payroll.tt_weekly_salary"/>
+            <field name="name">NIS Contributions</field>
+            <field name="appears_on_payslip">True</field>
+            <field name="sequence">103</field>
+            <field name="active">True</field>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = compute_nis_weekly(payslip, contract) *-1</field>
+        </record>
+        <record id="tt_weekly_additions" model="hr.salary.rule">
+            <field name="category_id" ref="l10n_tt_hr_payroll.tt_add"></field>
+            <field name="code">ADD</field>
+            <field name="struct_id" ref="l10n_tt_hr_payroll.tt_weekly_salary"/>
+            <field name="name">Additions</field>
+            <field name="appears_on_payslip">True</field>
+            <field name="sequence">2</field>
+            <field name="active">True</field>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = compute_additions_weekly(payslip, contract, "salary_additions")</field>
+        </record>
+        <record id="tt_weekly_paye" model="hr.salary.rule">
+            <field name="category_id" ref="l10n_tt_hr_payroll.tt_taxes"></field>
+            <field name="code">PAYE</field>
+            <field name="struct_id" ref="l10n_tt_hr_payroll.tt_weekly_salary"/>
+            <field name="name">Pay As You Earn</field>
+            <field name="appears_on_payslip">True</field>
+            <field name="sequence">104</field>
+            <field name="active">True</field>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = compute_paye_weekly(payslip, categories, contract) *-1</field>
+        </record>
+
     </data>
 </odoo>

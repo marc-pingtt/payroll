@@ -1,0 +1,1695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="nis_ni184_template">
+            <t t-call="web.html_container">
+                <t t-call="web.basic_layout">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                            <t t-set="empty_value">&#x200B;</t>
+                                <h5 style="font-size: 20px; font-weight: bold; margin-top: 8px; line-height: 0.1;">
+                                    <span style="display: inline-block; width: 100%; line-height: 0.1;">
+                                        <u style="float: center; line-height: 0.1;">THE NATIONAL INSURANCE BOARD</u>
+                                        <p style="float: right; width: 250px; text-align: right; font-weight: bold; line-height: 0.01;">NI 184</p>
+                                    </span>
+                                    </h5>
+                                    <h5 style="font-size: 20px; font-weight: bold; text-align: center; line-height: 0.01;">
+                                    <u style="padding-right:270px; line-height: 0.01;">STATEMENT OF CONTRIBUTIONS PAID / DUE</u>
+                                    </h5>
+                                <br/>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 8px;">
+                        <div class="col-12">
+                            <span style="display: flex; flex-wrap: nowrap; line-height: 0.1;">
+                                <p style="font-weight: bold; margin-right: 10px; line-height: 0.1">EMPLOYER'S TRADE NAME :</p>
+                                <p style="font-weight: bold; margin-right: 10px; line-height: 0.1;"><t t-esc="company.display_name"/></p>
+                                <p style="font-weight: bold; margin-right: 2px; margin-left: auto; line-height: 0.1;">EMPLOYER'S REGISTRATION NUMBER                              
+                                <div class="segmented-box" style="margin-top:-12px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="25">
+                                    <rect x="2" y="0" width="122" height="25" fill="none" stroke="black" stroke-width="2" />
+                                    <line x1="22" y1="0" x2="22" y2="25" stroke="black" stroke-width="1" />
+                                    <line x1="42" y1="0" x2="42" y2="25" stroke="black" stroke-width="1" />
+                                    <line x1="62" y1="0" x2="62" y2="25" stroke="black" stroke-width="1" />
+                                    <line x1="82" y1="0" x2="82" y2="25" stroke="black" stroke-width="1" />
+                                    <line x1="102" y1="0" x2="102" y2="25" stroke="black" stroke-width="1" />
+                                    <text x="9" y="20" font-size="20" fill="black" t-esc="bir_number[0]"></text>
+                                    <text x="29" y="20" font-size="20" fill="black" t-esc="bir_number[1]"></text>
+                                    <text x="49" y="20" font-size="20" fill="black" t-esc="bir_number[2]"></text>
+                                    <text x="69" y="20" font-size="20" fill="black" t-esc="bir_number[3]"></text>
+                                    <text x="89" y="20" font-size="20" fill="black" t-esc="bir_number[4]"></text>
+                                    <text x="109" y="20" font-size="20" fill="black" t-esc="bir_number[5]"></text>
+                                </svg>
+                                </div>
+                                </p>
+                                <p style="font-weight: bold; margin-left: auto; padding-right:2px; line-height: 0.1;">SERVICE CENTRE CODE :
+                                <div class="segmented-box" style="margin-top:-17px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="25">
+                                    <rect x="2" y="0" width="132" height="25" fill="none" stroke="black" stroke-width="2" />
+                                    <line x1="32" y1="0" x2="32" y2="25" stroke="black" stroke-width="1" />
+                                    <line x1="52" y1="0" x2="52" y2="25" stroke="black" stroke-width="1" />
+                                    <line x1="72" y1="0" x2="72" y2="25" stroke="black" stroke-width="1" />
+                                    <line x1="92" y1="0" x2="92" y2="25" stroke="black" stroke-width="1" />
+                                    <line x1="112" y1="0" x2="112" y2="25" stroke="black" stroke-width="1" />
+                                </svg>
+                                </div>
+                                </p>
+                                <p style="font-weight: bold;"></p>
+                            </span>
+                        </div>
+                        </div>
+                        <div class="row" style="padding-top:1px;  ">
+                            <div class="col-12">
+                                <span style="display: flex; flex-wrap: nowrap;">
+                                    <p style="font-weight: bold; margin-right: 10px; line-height: 0.1;">ADDRESS :
+                                            <span t-esc="company.street"/>
+                                            <span t-esc="company.street2"/>
+                                            <span t-esc="company.city"/>
+                                            <span t-esc="company.state_id.name"/>
+                                            <span t-esc="company.zip"/>
+                                            <span t-esc="company.country_id.display_name"/>
+                                    </p>
+                                    <p style="font-weight: bold; margin-left: auto; padding-right:2px; line-height: 1;">TELEPHONE NO :
+                                    <div class="segmented-box" style="margin-top:-5px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="25">
+                                        <rect x="2" y="0" width="162" height="25" fill="none" stroke="black" stroke-width="2" />
+                                        <line x1="22" y1="0" x2="22" y2="25" stroke="black" stroke-width="1" />
+                                        <line x1="42" y1="0" x2="42" y2="25" stroke="black" stroke-width="1" />
+                                        <line x1="62" y1="0" x2="62" y2="25" stroke="black" stroke-width="1" />
+                                        <line x1="82" y1="0" x2="82" y2="25" stroke="black" stroke-width="1" />
+                                        <line x1="102" y1="0" x2="102" y2="25" stroke="black" stroke-width="1" />
+                                        <line x1="122" y1="0" x2="122" y2="25" stroke="black" stroke-width="1" />
+                                        <line x1="142" y1="0" x2="142" y2="25" stroke="black" stroke-width="1" />
+                                        <text x="9" y="20" font-size="20" fill="black" t-esc="telephone_number[0]"></text>
+                                        <text x="29" y="20" font-size="20" fill="black" t-esc="telephone_number[1]"></text>
+                                        <text x="49" y="20" font-size="20" fill="black" t-esc="telephone_number[2]"></text>
+                                        <text x="71" y="20" font-size="20" fill="black">-</text>
+                                        <text x="89" y="20" font-size="20" fill="black" t-esc="telephone_number[3]"></text>
+                                        <text x="109" y="20" font-size="20" fill="black" t-esc="telephone_number[4]"></text>
+                                        <text x="129" y="20" font-size="20" fill="black" t-esc="telephone_number[5]"></text>
+                                        <text x="149" y="20" font-size="20" fill="black" t-esc="telephone_number[6]"></text>
+                                        </svg>
+                                    </div>
+                                    </p>
+                                    </span> 
+                                </div>                            
+                            </div>
+                        <div class="row" style="padding-top:3px;  ">
+                            <div class="col-12">
+                                <span style="display: flex; flex-wrap: nowrap;">
+                                    <p style="font-weight: bold; margin-right: 10px; line-height: 0.1;">CONTRIBUTION PERIOD FROM :
+                                    <div class="segmented-box" style="margin-top:-12px;">
+                                            <t t-set="date_start" t-value="str(data.get('date_start'))"/>
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="25">
+                                            <rect x="2" y="0" width="162" height="25" fill="none" stroke="black" stroke-width="2" />
+                                            <line x1="22" y1="10" x2="22" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="42" y1="10" x2="42" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="62" y1="10" x2="62" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="82" y1="0" x2="82" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="102" y1="10" x2="102" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="122" y1="0" x2="122" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="142" y1="10" x2="142" y2="25" stroke="black" stroke-width="1" />
+                                            <text x="9" y="20" font-size="20" fill="black" t-esc="date_start[0]"></text>
+                                            <text x="29" y="20" font-size="20" fill="black" t-esc="date_start[1]"></text>
+                                            <text x="49" y="20" font-size="20" fill="black" t-esc="date_start[2]"></text>
+                                            <text x="69" y="20" font-size="20" fill="black" t-esc="date_start[3]"></text>
+                                            <text x="89" y="20" font-size="20" fill="black" t-esc="date_start[5]"></text>
+                                            <text x="109" y="20" font-size="20" fill="black" t-esc="date_start[6]"></text>
+                                            <text x="129" y="20" font-size="20" fill="black" t-esc="date_start[8]"></text>
+                                            <text x="149" y="20" font-size="20" fill="black" t-esc="date_start[9]"></text>
+                                            </svg>
+                                        </div>
+                                    </p>
+                                    <p style="font-weight: bold; padding-right:10px; padding-left:10px; line-height: 0.1;">TO :
+                                    <div class="segmented-box" style="margin-top:-12px;">
+                                            <t t-set="date_end" t-value="str(data.get('date_end'))"/>
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="25">
+                                            <rect x="2" y="0" width="162" height="25" fill="none" stroke="black" stroke-width="2" />
+                                            <line x1="22" y1="10" x2="22" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="42" y1="10" x2="42" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="62" y1="10" x2="62" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="82" y1="0" x2="82" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="102" y1="10" x2="102" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="122" y1="0" x2="122" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="142" y1="10" x2="142" y2="25" stroke="black" stroke-width="1" />
+                                            <text x="9" y="20" font-size="20" fill="black" t-esc="date_end[0]"></text>
+                                            <text x="29" y="20" font-size="20" fill="black" t-esc="date_end[1]"></text>
+                                            <text x="49" y="20" font-size="20" fill="black" t-esc="date_end[2]"></text>
+                                            <text x="69" y="20" font-size="20" fill="black" t-esc="date_end[3]"></text>
+                                            <text x="89" y="20" font-size="20" fill="black" t-esc="date_end[5]"></text>
+                                            <text x="109" y="20" font-size="20" fill="black" t-esc="date_end[6]"></text>
+                                            <text x="129" y="20" font-size="20" fill="black" t-esc="date_end[8]"></text>
+                                            <text x="149" y="20" font-size="20" fill="black" t-esc="date_end[9]"></text>   
+                                            </svg>
+                                        </div>
+                                    </p>
+                                        <p style="font-weight: bold; margin-right: 2px; margin-left: 50px; line-height: 0.1;">NO.OF WEEKS IN PERIOD:
+                                        <div class="segmented-box" style="margin-top:-12px;">
+                                            <t t-set="nis_periods" t-value="str(nis_report_data[0].get('number_of_nis_periods'))"/>
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="25">
+                                            <rect x="2" y="0" width="42" height="25" fill="none" stroke="black" stroke-width="2" />
+                                            <line x1="22" y1="0" x2="22" y2="25" stroke="black" stroke-width="1" />
+                                            <tr t-if="len(nis_periods) == 2">
+                                            <text x="9" y="20" font-size="20" fill="black" t-esc="nis_periods[0]"></text>
+                                            <text x="29" y="20" font-size="20" fill="black" t-esc="nis_periods[1]"></text>
+                                            </tr>
+                                            <tr t-if="len(nis_periods) == 1">
+                                            <text x="9" y="20" font-size="20" fill="black" t-esc="0"></text>
+                                            <text x="29" y="20" font-size="20" fill="black" t-esc="nis_periods[0]"></text>
+                                            </tr>
+                                            </svg>
+                                        </div>
+                                        </p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:3px;  ">
+                            <div class="col-12">
+                            <span style="display: flex; flex-wrap: nowrap;">
+                            <p style="font-weight: bold; margin-right: 10px; line-height: 0.1; padding-left: 270px;">YYYY</p>
+                            <p style="font-weight: bold; margin-right: 10px; line-height: 0.1; padding-left: 20px;">MM</p>
+                            <p style="font-weight: bold; margin-right: 10px; line-height: 0.1; padding-left: 5px;">DD</p>
+
+                            <p style="font-weight: bold; margin-right: 10px; line-height: 0.1; padding-left: 95px;">YYYY</p>
+                            <p style="font-weight: bold; margin-right: 10px; line-height: 0.1; padding-left: 20px;">MM</p>
+                            <p style="font-weight: bold; margin-right: 10px; line-height: 0.1; padding-left: 5px;">DD</p>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page nis-table" style="padding-top:-5px;">
+                        <table class="table  dark-border" width="700" border="1">
+                            <tbody>
+                                <tr style="width:150px;font-weight: bold;font-size:12px; text-align:center;">
+                                    <td width="100" rowspan="2">
+                                        <div class="text-center">
+                                            <span>
+                                                1.
+                                            </span>
+                                        </div>
+                                        <div class="text-center">
+                                            <span>
+                                                NATIONAL INSURANCE NUMBER
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td width="100" rowspan="2" colspan="2">
+                                        <div class="text-center">
+                                            <span>
+                                                2.
+                                            </span>
+                                        </div>
+                                        <div class="text-center">
+                                            <span>
+                                                NAME OF EMPLOYED PERSON OR UNPAID APPRENTICE
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td width="140" colspan="3">
+                                        <div class="text-center">
+                                            <span>
+                                                3.<br/>DATE OF BIRTH
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td width="100" colspan="3">
+                                        <div class="text-center">
+                                            <span>
+                                                4.<br/>DATE EMPLOYED
+                                                .LAST DATE WORKED
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td width="100" rowspan="2">
+                                        <div class="text-center">
+                                            <span>
+                                                5.<br/>SALARY FOR PERIOD
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td width="100" colspan="4">
+                                        <div class="text-center">
+                                            <span>
+                                                6.<br/>VALUE OF CONTRIBUTION DUE WEEKLY
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td width="100" rowspan="2">
+                                        <div class="text-center">
+                                            <span>
+                                                7.<br/>TOTAL VALUE OF CONTRIBUTIONS
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
+                                    <td width="98">
+                                        <div class="text-center">
+                                            <span>
+                                                YYYY
+                                            </span>
+
+                                        </div>
+                                    </td>
+                                    <td width="98">
+                                        <div class="text-center">
+                                            <span>
+                                                MM
+                                            </span>
+
+                                        </div>
+                                    </td>
+                                    <td width="98">
+                                        <div class="text-center">
+                                            <span>
+                                                DD
+                                            </span>
+
+                                        </div>
+                                    </td>
+                                    <td width="98">
+                                        <div class="text-center">
+                                            <span>
+                                                YYYY
+                                            </span>
+
+                                        </div>
+                                    </td>
+                                    <td width="98">
+                                        <div class="text-center">
+                                            <span>
+                                                MM
+                                            </span>
+
+                                        </div>
+                                    </td>
+                                    <td width="98">
+                                        <div class="text-center">
+                                            <span>
+                                                DD
+                                            </span>
+
+                                        </div>
+                                    </td>
+                                    <td width="98">
+                                        <div class="text-center">
+                                            <span>
+                                                WK1
+                                                <br/>
+                                                $
+                                            </span>
+
+                                        </div>
+                                    </td>
+                                    <td width="98">
+                                        <div class="text-center">
+                                            <span>
+                                                WK2
+                                                <br/>
+                                                $
+                                            </span>
+
+                                        </div>
+                                    </td>
+                                    <td width="98">
+                                        <div class="text-center">
+                                            <span>
+                                                WK3
+                                                <br/>
+                                                $
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td width="98">
+                                        <div class="text-center">
+                                            <span>
+                                                WK4
+                                                <br/>
+                                                $
+                                            </span>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <t t-set="default_value" t-value="0"/>
+                                <t t-set="count" t-value="default_value"/>
+                                <t t-set="employee" t-value="nis_report_data[0]"/>
+                                <t t-set="length" t-value="len(employee.get('names'))"/>
+                                    <tr>
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[count]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[count]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[count]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[count]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[count]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[count]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[count]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                    </tr>                                                                                           
+                                    <tr>
+                                        <tr t-if="length &lt; 2">                                       
+                                        <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                        </td>
+                                        </tr>
+                                        <tr t-if="length &gt;= 2">
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[1]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[1]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[1]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[1]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[1]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[1]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[1]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <tr t-if="length &lt; 3">                                       
+                                        <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                        </td>
+                                        </tr>
+                                        <tr t-if="length &gt;= 3">
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[2]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[2]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[2]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[2]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[2]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[2]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[2]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <tr t-if="length &lt; 4">                                       
+                                        <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                        </td>
+                                        </tr>
+                                        <tr t-if="length &gt;= 4">
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[3]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[3]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[3]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[3]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[3]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[3]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[3]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                        </tr>
+                                    </tr> 
+                                    <tr>
+                                        <tr t-if="length &lt; 5">                                       
+                                        <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                        </td>
+                                        </tr>
+                                        <tr t-if="length &gt;= 5">
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[4]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[4]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[4]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[4]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[4]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[4]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[4]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <tr t-if="length &lt; 6">                                       
+                                        <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                        </td>
+                                        </tr>
+                                        <tr t-if="length &gt;= 6">
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[5]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[5]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[5]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[5]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[5]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[5]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[5]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <tr t-if="length &lt; 7">                                       
+                                        <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                        </td>
+                                        </tr>
+                                        <tr t-if="length &gt;= 7">
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[6]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[6]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[6]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[6]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[6]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[6]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[6]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <tr t-if="length &lt; 8">                                       
+                                        <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                        </td>
+                                        </tr>
+                                        <tr t-if="length &gt;= 8">
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[7]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[7]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[7]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[7]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[7]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[7]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[7]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <tr t-if="length &lt; 9">                                       
+                                        <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                        </td>
+                                        </tr>
+                                        <tr t-if="length &gt;= 9">
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[8]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[8]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[8]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[8]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[8]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[8]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[8]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <tr t-if="length &lt; 10">                                       
+                                        <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                        </td>
+                                        </tr>
+                                        <tr t-if="length &gt;= 10">
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[9]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[9]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[9]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[9]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[9]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[9]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[9]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <tr t-if="length &lt; 11">                                       
+                                        <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                            </td>
+                                            <td>
+                                            <span style="font-size: 9px" t-esc="empty_value"/>
+                                        </td>
+                                        </tr>
+                                        <tr t-if="length &gt;= 11">
+                                        <td>
+                                            <t t-set="nis_number" t-value="employee.get('nib_numbers', [])[10]"/> 
+                                            <tr t-if="nis_number == False">
+                                                <t t-set="nis_number" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="nis_number"/>
+                                        </td>
+                                        <td style="border-right: none;">
+                                            <t t-set="name" t-value="employee.get('names', [])[10]"/>
+                                            <t t-set="name_parts" t-value="name.split(' ')"/>
+                                            <t t-set="output_name" t-value="name_parts[1]"/>
+                                            <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td style="border-left: none;">
+                                        <t t-set="output_name" t-value="name_parts[0]"/>
+                                        <tr t-if="output_name == False">
+                                                <t t-set="output_name" t-value="empty_value"/>                                        
+                                            </tr>
+                                            <t t-esc="output_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="birthday" t-value="employee.get('dob', [])[10]"/>
+                                            <span t-esc="birthday.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="birthday.strftime('%d')"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="last_day_worked" t-value="employee.get('date_employed_and_last_date_worked', [])[10]"/>
+                                            <span t-esc="last_day_worked.strftime('%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%m')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="last_day_worked.strftime('%d')"/>
+                                        </td>
+
+                                         <td> 
+                                            <t t-set="salary_for_period" t-value="employee.get('salary_for_period', [])[10]"/>
+                                            <span t-esc="salary_for_period"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="value_of_contributions" t-value="employee.get('value_of_contributions', [])[10]"/>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="value_of_contributions"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_value_per_employee" t-value="employee.get('total_value_per_employee', [])[10]"/>
+                                            <span t-esc="total_value_per_employee"/>
+                                        </td>
+                                        </tr>
+                                    </tr>                                   
+                                    <tr style="text-align:center; font-size: 14px; font-weight: bold;">
+                                        <td colspan="2">NUMBER OF EMPLOYEES</td>
+                                        <td colspan="1">
+                                            <t t-esc="employee.get('total_employees')"/>
+                                        </td>
+                                        <td style="visibility: hidden;">
+                                        </td>
+                                       <td style="visibility: hidden;">
+                                        </td>
+                                        <td style="visibility: hidden;">
+                                        </td>
+                                        <td style="visibility: hidden;">
+                                        </td>
+                                        <td style="visibility: hidden;">
+                                        </td>
+                                        <td style="visibility: hidden;">
+                                        </td>
+                                        <td style="visibility: hidden;">
+                                        </td>
+                                        <td style="visibility: hidden;">
+                                        </td>
+                                        <td colspan="3">VALUE OF CONTRIBUTIONS</td>
+                                        <td colspan="1">
+                                            <t t-esc="employee.get('total_value')"/>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="container" style="line-height: 0.1; padding-top:-10px; padding-left:-5px;">
+                        <div class="row">
+                            <div class="col-6" style="font-size:15px; line-height: 0.1; margin-top:-15px; margin-left:-16px;">
+                                <p style="white-space: nowrap;">1.
+                                    The correct National Insurance Number for each employed person must be shown in
+                                    column 1. It is an offence not to do so.
+                                </p>
+                            </div>
+                            <div class="col-6" style="font-size:15px; line-height: 0.1; margin-top:-15px;">
+                                <p>4.Record value of contribution per week in column 6.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6" style="font-size:15px; font-weight:bold; line-height: 0.1; margin-top:-15px; margin-left:-16px; ">
+                                <p>2.
+                                    Where new employees are hired in this contribution period add particulars ‑ N.I.
+                                    number
+                                    (if known), date of birth, and date employed.
+                                    Attach completed NI 4 if National Insurance number is not known.
+                                    For employees separated in this period state last date worked.
+                                </p>
+                            </div>
+                            <div class="col-6" style=" font-size:15px; line-height: 0.1; margin-top:-20px;">
+                                <p>5.No contributions are due when Sickness, Maternity, Employment Injury or Invalidity
+                                    Benefits are payable.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6" style="font-size:15px; line-height: 0.1; margin-top:-16px; margin-left:-16px;">
+                                <p>3.
+                                    Salary information must be included in column 5 for each employee
+                                </p>
+                            </div>
+                            <div class="col-6" style=" font-size:15px; line-height: 0.1; margin-top:-55px;">
+                                <p>6.Submit this form with your payment and completed NI 187 by the last working day of
+                                    the
+                                    month reported on.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6" style="font-size:12px; font-weight:bold; line-height: 0.1; margin-top:-15px; margin-left:-16px;">
+                                <p> WARNING! THE LAW NOW IMPOSES A PENALTY FOR THE LATE SUBMISSION OF THIS INFORMATION AND FOR
+                                    INCORRECT OR INCOMPLETE INFORMATION
+                                </p>
+                            </div>
+                            <div class="col-6" style=" font-size:15px line-height: 0.1; margin-top:-60px;">
+                                <p>7.
+                                    The Board will accept this information on diskette.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left:50px; display: flex; justify-content: center; margin-top:-33px;">
+                        <div class="col-12">
+                            <span style="display: flex; flex-wrap: nowrap; align-items: center; padding-left:550px; padding-top:-5px;">
+                                <p style="font-weight: bold; text-align: center; padding-top:-5px;">PREPARED BY:</p>
+                                <p style="font-weight: bold; margin-right: 10px; padding-left:10px;" t-esc="created_by"/> 
+                                <p style="font-weight: bold; white-space: nowrap; padding-right:10px; padding-left:25px; padding-top:-5px;">SIGNATURE : ________________________________________</p>                              
+                                <div style="width:225px; height:30px; float:right;">
+                                    <p style="width:150px; font-weight: bold;">
+                                        <div class="segmented-box" style="margin-top:-45px; padding-left:250px; padding-bottom:10px;">
+                                            <t t-set="now" t-value="str(context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d'))"/>
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="25">
+                                            <rect x="2" y="0" width="162" height="25" fill="none" stroke="black" stroke-width="2" />
+                                            <line x1="22" y1="10" x2="22" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="42" y1="10" x2="42" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="62" y1="10" x2="62" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="82" y1="0" x2="82" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="102" y1="10" x2="102" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="122" y1="0" x2="122" y2="25" stroke="black" stroke-width="1" />
+                                            <line x1="142" y1="10" x2="142" y2="25" stroke="black" stroke-width="1" />
+                                            <text x="9" y="20" font-size="20" fill="black" t-esc="now[0]"></text>
+                                            <text x="29" y="20" font-size="20" fill="black" t-esc="now[1]"></text>
+                                            <text x="49" y="20" font-size="20" fill="black" t-esc="now[2]"></text>
+                                            <text x="69" y="20" font-size="20" fill="black" t-esc="now[3]"></text>
+                                            <text x="89" y="20" font-size="20" fill="black" t-esc="now[5]"></text>
+                                            <text x="109" y="20" font-size="20" fill="black" t-esc="now[6]"></text>
+                                            <text x="129" y="20" font-size="20" fill="black" t-esc="now[8]"></text>
+                                            <text x="149" y="20" font-size="20" fill="black" t-esc="now[9]"></text>                                            
+                                            </svg>
+                                        </div>
+                                        <div class="col-12">
+                                            <span style="display: flex; flex-wrap: nowrap;">
+
+                                            <p style="font-weight: bold; margin-right: 10px; line-height: 0.1; padding-left: 260px;">YYYY</p>
+                                            <p style="font-weight: bold; margin-right: 10px; line-height: 0.1; padding-left: 20px;">MM</p>
+                                            <p style="font-weight: bold; margin-right: 10px; line-height: 0.1; padding-left: 5px;">DD</p>
+                                            </span>
+                                            </div>
+                                    </p>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

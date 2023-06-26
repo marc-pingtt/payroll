@@ -9,7 +9,7 @@
     </record>
 
     <menuitem id="salary_additions_menu" action="action_salary_additions_type"
-            parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
-            name="Salary Additions Types"
-            sequence="1"/>
-</odoo> 
+              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+              name="Salary Additions Types"
+              sequence="1"/>
+</odoo>

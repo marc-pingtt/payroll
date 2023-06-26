@@ -11,8 +11,10 @@
                         <field name="name"/>
                         <field name="amount"/>
                         <field name="currency_id"/>
+                        <field name="type" widget="many2one"/>
                         <field name="year_valid_from"/>
                         <field name="year_valid_to"/>
+                        <field name="is_weekly"/>
                     </group>
                 </sheet>
             </form>
@@ -28,5 +30,5 @@
                 <field name="currency_id"/>
             </tree>
         </field>
-    </record>   
+    </record>  
 </odoo>

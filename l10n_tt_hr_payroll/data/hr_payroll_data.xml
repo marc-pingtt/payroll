@@ -18,7 +18,7 @@
     </record>
 
     <menuitem id="paye_rates_menu" action="action_paye_rates"
-              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+              parent="hr_work_entry_contract.menu_hr_payroll_configuration"
               sequence="1"/> -->
 
     <!-- <record id="action_health_surcharge_rates" model="ir.actions.act_window">
@@ -28,7 +28,7 @@
     </record>
 
     <menuitem id="health_surcharge_rates_menu" action="action_health_surcharge_rates"
-              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+              parent="hr_work_entry_contract.menu_hr_payroll_configuration"
               sequence="1"/> -->
 
 </odoo>

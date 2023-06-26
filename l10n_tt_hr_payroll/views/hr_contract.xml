@@ -6,80 +6,79 @@
         <field name="name">Prior Earnings</field>
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
-        <field name="arch" type="xml">
+        <field name="arch" type="xml">    
             <xpath expr="//group[@name='notes_group']" position="before">
                 <group name="priors" string="Prior to Contract Start, Current Financial Year Disposition">
-                    <field name="year_of_prior_validity" string="Year of Prior Validity"/>
-                    <field name="prior_earnings" string="Prior Gross Earnings"/>
-                    <field name="prior_nis_paid" string="Prior NIS Paid"/>
-                    <field name="prior_paye_paid" string="Prior PAYE Paid"/>
-                    <field name="prior_hsur_paid" string="Prior Health Surcharge Paid"/>
-                </group>
-            </xpath>
+                        <field name="year_of_prior_validity" string="Year of Prior Validity"/>
+                        <field name="prior_earnings" string="Prior Gross Earnings"/>
+                        <field name="prior_nis_paid" string="Prior NIS Paid"/>
+                        <field name="prior_paye_paid" string="Prior PAYE Paid"/>
+                        <field name="prior_hsur_paid" string="Prior Health Surcharge Paid"/>              
+                    </group>
+            </xpath>            
         </field>
-    </record>
+    </record>  
     <record id="hr_contract_salary_additions" model="ir.ui.view">
         <field name="name">Contract Salary Allowances Form View</field>
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
-        <field name="arch" type="xml">
+        <field name="arch" type="xml">   
             <xpath expr="//group[@name='yearly_advantages']" position="after">
-                <group name="salary_additions" string="Additions">
-                    <field name="salary_additions"/>
-                </group>
-
-            </xpath>
+                 <group name="salary_additions" string="Additions">
+                        <field name="salary_additions"/>               
+                    </group>
+            </xpath>            
         </field>
-    </record>
+    </record> 
     <record id="hr_contract_other_income_sources" model="ir.ui.view">
         <field name="name">Other Income Sources Form View</field>
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
-        <field name="arch" type="xml">
+        <field name="arch" type="xml">   
             <xpath expr="//group[@name='salary_additions']" position="after">
-                <group name="other_income_sources" string="Additional Income">
-                    <field name="other_income_sources"/>
-                </group>
-            </xpath>
+                 <group name="other_income_sources" string="Additional Income">
+                        <field name="other_income_sources"/>               
+                    </group>
+            </xpath>            
         </field>
-    </record>
+    </record> 
     <record id="hr_contract_tax_deductions" model="ir.ui.view">
         <field name="name">Contract Tax Deduction Form View</field>
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
-        <field name="arch" type="xml">
+        <field name="arch" type="xml">   
             <xpath expr="//group[@name='yearly_advantages']" position="after">
-                <group name="paye_deductions" string="Deductions">
-                    <field name="tax_deductions"/>
-                </group>
-            </xpath>
+                 <group name="paye_deductions" string="Deductions">
+                        <field name="tax_deductions"/>               
+                    </group>
+            </xpath>            
         </field>
     </record>
     <record id="hr_contract_tax_credits" model="ir.ui.view">
         <field name="name">Contract Tax Credit Form View</field>
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
-        <field name="arch" type="xml">
+        <field name="arch" type="xml">   
             <xpath expr="//group[@name='yearly_advantages']" position="after">
-                <group name="tax_credits" string="Credits">
-                    <field name="tax_credits"/>
-                </group>
-            </xpath>
+                 <group name="tax_credits" string="Credits">
+                        <field name="tax_credits"/>               
+                    </group>
+            </xpath>            
         </field>
-    </record>
+    </record>  
     <record id="hr_contract_financial_life_circumstances" model="ir.ui.view">
         <field name="name">Financial Life Circumstance</field>
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
-        <field name="arch" type="xml">
+        <field name="arch" type="xml">    
             <xpath expr="//group[@name='priors']" position="before">
                 <group name="life_circumstance_salary" string="Financial Life Circumstance">
-                    <field name="is_pension" string="Collects Pension"/>
-                </group>
+                        <field name="is_pension" string="Collects Pension"/>         
+                    </group>
                 <group name="other_options" string="Other Options">
                     <field name="ignore_hsur"/>
                 </group>
-            </xpath>
+            </xpath>            
         </field>
     </record>
 </odoo>

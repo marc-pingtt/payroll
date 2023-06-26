@@ -36,6 +36,10 @@ class HrPayslip(models.Model):
             'compute_health_surcharge': compute_health_surcharge,
             'compute_nis': compute_nis,
             'compute_additions': compute_additions,
+            'compute_paye_weekly': compute_paye_weekly,
+            'compute_health_surcharge_weekly': compute_health_surcharge_weekly,
+            'compute_nis_weekly': compute_nis_weekly,
+            'compute_additions_weekly': compute_additions_weekly,
         })
         return res
 
@@ -310,8 +314,8 @@ def compute_annual_deductions(payslip, annual_income, contract, nis_this_month):
         payslip, contract, annual_income)
     annual_deductions += compute_contributions(
         payslip, contract, nis_projected_deductions)
-    # Refector to use rule parameter
-    annual_deductions += abs(total_nis_tax_allowance_so_far) * 0.7
+    annual_deductions += abs(total_nis_tax_allowance_so_far) * \
+        payslip.rule_parameter('NIS_%')
     annual_deductions += compute_alimony_or_maintainance(payslip, contract)
     annual_deductions += compute_travelling_expenses(payslip, contract)
     annual_deductions += compute_guesthouse_conversion(payslip, contract)
@@ -361,7 +365,257 @@ def compute_paye_salary(payslip, categories, contract):
         annual_paye = compute_annual_paye(
             chargable_income, chargable_income, payslip, compute_annual_tax_credits(payslip, contract))
     paye_year_to_date = payslip.sum('PAYE', datetime(
-        payslip.date_to.year, 1, 1), payslip.date_to) - abs(relevant_by_amount(contract, payslip, "prior_paye_paid"))
+        payslip.date_to.year, 1, 1), payslip.date_to) + relevant_by_amount(contract, payslip, "prior_paye_paid")
     remaining_paye = annual_paye - Decimal(abs(paye_year_to_date))
     monthly_paye = remaining_paye / periods_remaining
     return Decimal(monthly_paye)
+
+
+def compute_health_surcharge_weekly(contract, payslip, categories):
+    if (contract.ignore_hsur == True):
+        return 0
+    total_mondays = compute_number_mondays_inside_period(
+        payslip.date_from, payslip.date_to)
+    basic_sal_week = (categories.BASIC / total_mondays)
+    if basic_sal_week <= 109:
+        health_surcharge = Decimal(
+            payslip.rule_parameter('HSUR_LR')) * total_mondays
+    else:
+        health_surcharge = Decimal(
+            payslip.rule_parameter('HSUR_UR')) * total_mondays
+    return float(health_surcharge)
+
+
+def compute_nis_weekly(payslip, contract):
+    amount = 0.0
+    total_mondays = compute_number_mondays_inside_period(
+        payslip.date_from, payslip.date_to)
+    contract = compute_active_contract(contract)
+    total_income = contract.hourly_wage * contract.hours_per_week
+    nis_rates = payslip.env['nis.rates'].search([])
+    total_income += compute_additions_weekly(
+        payslip, contract, "other_income_sources")
+    total_income += compute_additions_weekly(
+        payslip, contract, "salary_additions")
+    first_run = True
+    for line in nis_rates.nis_line_ids:
+        weekly_earn = eval("line.weekly_earnings.split()")
+        if first_run == True:
+            if Decimal(weekly_earn[0]) == total_income:
+                amount = line.employees_weekly_contri
+                cal = Decimal(amount) * total_mondays
+                return float(cal)
+            elif Decimal(weekly_earn[0]) > total_income:
+                return amount
+            first_run = False
+        if weekly_earn[2] != "over" and first_run == False:
+            if Decimal(weekly_earn[0]) <= total_income <= Decimal(weekly_earn[2]):
+                amount = line.employees_weekly_contri
+                if (contract.is_pension == True):
+                    amount = 0
+                cal = Decimal(amount) * total_mondays
+                return cal
+        else:
+            amount = line.employees_weekly_contri
+            if (contract.is_pension == True):
+                amount = 0
+            cal = Decimal(amount) * total_mondays
+            return cal
+
+
+def compute_additions_weekly(payslip, contract, param):
+    contract = compute_active_contract(contract)
+    amount = 0
+
+    def is_valid_today(parameter, payslip):
+
+        if (parameter.year_valid_to != False):
+            if (parameter.year_valid_from <= payslip.date_from and parameter.year_valid_to >= payslip.date_to):
+                return True
+
+        if (parameter.year_valid_from <= payslip.date_from and parameter.year_valid_to == False):
+            return True
+
+        if (parameter.year_valid_to.month == payslip.date_to.month and parameter.year_valid_to.year == payslip.date_to.year):
+            return True
+
+        return False
+
+    parameters = [parameter for parameter in eval("contract."+param) if is_valid_today(
+        parameter, payslip)]
+
+    for parameter in parameters:
+        if parameter.is_weekly == True:
+            amount += parameter.amount * \
+                compute_number_mondays_inside_period(
+                    payslip.date_from, payslip.date_to)
+        # elif payslip.date_to.month == payslip.date_from.month and payslip.date_to.year == payslip.date_from.year:
+        #     amount += parameter.amount / compute_number_mondays_inside_month(payslip.date_from, payslip.date_to)
+        else:
+            amount += parameter.amount
+
+    return amount
+
+
+def compute_paye_weekly(payslip, categories, contract):
+    wage_year_to_date = payslip.sum('GROSS', datetime(
+        payslip.date_to.year, 1, 1), payslip.date_to) + relevant_by_amount(contract, payslip, "prior_earnings")
+    other_income_sources_year_to_date = [contract.get_valid_other_income_sources(date(
+        payslip.date_from.year, x, 1)).mapped('amount') for x in range(1, payslip.date_from.month)]
+    income_year_to_date = wage_year_to_date + \
+        sum([sum(x) for x in other_income_sources_year_to_date])
+    projected_wage = (get_number_of_remaining_working_days(
+        payslip.date_from, payslip.date_to, contract)*(contract.hours_per_week/5))*contract.hourly_wage
+    projected_salary_additions = compute_additional_income_for_remaining_period(
+        payslip, contract, "salary_additions") + compute_additional_income_for_remaining_period(payslip, contract, "other_income_sources")
+    annual_income = projected_wage + income_year_to_date + projected_salary_additions
+    annual_wage = wage_year_to_date + projected_wage
+    annual_deductions = compute_annual_deductions(
+        payslip, annual_income, contract, categories.NIS)
+    chargable_income = annual_income - annual_deductions
+    if annual_wage < chargable_income:
+        annual_paye = compute_annual_paye(
+            annual_income, annual_wage, payslip, compute_annual_tax_credits(payslip, contract))
+    else:
+        annual_paye = compute_annual_paye(
+            chargable_income, chargable_income, payslip, compute_annual_tax_credits(payslip, contract))
+    paye_year_to_date = payslip.sum('PAYE', datetime(
+        payslip.date_to.year, 1, 1), payslip.date_to) - abs(relevant_by_amount(contract, payslip, "prior_paye_paid"))
+    remaining_paye = annual_paye - Decimal(abs(paye_year_to_date))
+    period_paye = (remaining_paye / compute_mondays_remaining(payslip.dict.date_from.year, payslip.dict.date_from.month,
+                   payslip.dict.date_from.day, "not_weekly"))*compute_number_mondays_inside_period(payslip.dict.date_from, payslip.dict.date_to)
+    return Decimal(period_paye)
+
+
+def compute_number_mondays_inside_month(date_start, date_end):
+    mondays_gone = 0
+    day_counter = date_start.day
+
+    format_string = "%Y-%m-%d"
+
+    while (day_counter <= date_end.day):
+        date_string = str(date_end.year)+"-" + \
+            str(date_end.month)+"-"+str(day_counter)
+        datetime_obj = datetime.strptime(date_string, format_string)
+
+        if datetime_obj.weekday() == 0:
+            mondays_gone += 1
+
+        day_counter += 1
+
+    return mondays_gone
+
+
+def compute_number_mondays_inside_period(date_from, date_to):
+    monday_counter = 0
+    from_month = date_from.month
+
+    format_string = "%Y-%m-%d"
+    year_counter = date_from.year + 1
+
+    if (date_from.year == date_to.year and date_from.month != date_to.month):
+        while (from_month < date_to.month):
+            monday_counter += compute_mondays_in_month(
+                date_from.year, from_month)
+            from_month += 1
+
+    if (date_from.year == date_to.year and (date_from.month == date_to.month or from_month == date_to.month)):
+        monday_counter += compute_number_mondays_inside_month(
+            date_from, date_to)
+
+    if (date_from.year != date_to.year):
+
+        date_string_this_year = str(
+            date_from.year)+"-"+str(date_from.max.month)+"-"+str(date_from.max.day)
+        datetime_obj_this_year = datetime.strptime(
+            date_string_this_year, format_string)
+
+        monday_counter += compute_number_mondays_inside_period(
+            date_from, datetime_obj_this_year)
+
+        date_string_next_year = str(
+            year_counter)+"-"+str(date_from.min.month)+"-"+str(date_from.min.day)
+        datetime_obj_next_year = datetime.strptime(
+            date_string_next_year, format_string)
+
+        monday_counter += compute_number_mondays_inside_period(
+            datetime_obj_next_year, date_to)
+
+    return monday_counter
+
+
+def compute_mondays_remaining(year, month, days, switch):
+    month_prs = month
+    mondays_in_year = 0
+    mondays_gone = 0
+    month_counter = 1
+    day_counter = 1
+
+    format_string = "%Y-%m-%d"
+
+    while (month_prs <= 12):
+        mondays_in_year += compute_mondays_in_month(year, month_prs)
+        month_prs += 1
+
+    while (month_counter < month):
+        mondays_gone += compute_mondays_in_month(year, month_counter)
+        month_counter += 1
+
+    while (day_counter <= days):
+
+        date_string = str(year)+"-"+str(month)+"-"+str(day_counter)
+        datetime_obj = datetime.strptime(date_string, format_string)
+
+        if datetime_obj.weekday() == 0:
+            mondays_gone += 1
+
+        day_counter += 1
+
+    if switch == "weekly":
+        return mondays_in_year - mondays_gone
+
+    return mondays_in_year
+
+
+def compute_additional_income_for_remaining_period(payslip, contract, param):
+    amount = 0
+    month = payslip.date_to.month + 1
+    if (payslip.date_from.year != payslip.date_to.year):
+        return amount
+    while (month <= 12):
+        date_from = datetime(payslip.date_from.year, month,
+                             payslip.date_from.min.day)
+        date_to = datetime(payslip.date_to.year, month,
+                           get_max_day_for_month(payslip.date_to.year, month))
+        payslip.date_from = date_from.date()
+        payslip.date_to = date_to.date()
+        amount += compute_additions_weekly(payslip, contract, param)
+        month += 1
+    return amount
+
+
+def get_max_day_for_month(year, month):
+    num_days = calendar.monthrange(year, month)[1]
+    return num_days
+
+
+def get_number_of_remaining_working_days(date_from, date_to, contract):
+    today = date(date_to.year, date_to.month, date_to.day)
+    year_end = date(date_to.year, 12, 31)
+    if (date_from.year != date_to.year):
+        today = date(date_from.year, date_from.month, date_from.day)
+        year_end = date(date_from.year, 12, 31)
+    remaining_days = (year_end - today).days + 1
+    working_days = 0
+    date_list = []
+    stop_duplicate = 99
+    for work_day in contract.resource_calendar_id.attendance_ids:
+        if stop_duplicate != work_day.dayofweek:
+            date_list.append(int(work_day.dayofweek))
+            stop_duplicate = work_day.dayofweek
+    for i in range(remaining_days):
+        current_day = today + timedelta(days=i)
+        if current_day.weekday() in date_list:
+            working_days += 1
+
+    return working_days

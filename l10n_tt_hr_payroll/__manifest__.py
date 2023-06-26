@@ -41,6 +41,11 @@
         'report/additions_report.xml',
         'report/deductions_report.xml',
         'views/hr_contract_extras.xml',
+        'wizard/nis_ni184.xml',
+        'wizard/nis_ni187.xml',
+        'report/nis_ni184.xml',
+        'report/nis_ni187.xml',
+        'views/nib_ni184_ni187_report.xml',
     ],
 
     'installable': True,

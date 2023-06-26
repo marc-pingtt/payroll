@@ -13,6 +13,7 @@
                         <field name="currency_id"/>
                         <field name="year_valid_from"/>
                         <field name="year_valid_to"/>
+                        <field name="is_weekly"/>
                     </group>
                 </sheet>
             </form>

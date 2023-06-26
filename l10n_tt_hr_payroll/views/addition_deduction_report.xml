@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
             <record id="additions_report_action" model="ir.actions.report">
@@ -21,6 +22,6 @@
             <field name="binding_type">report</field>
             <field name="paperformat_id" ref="paperformat_us_letter_landscape"/>
         </record>
-
+       
     </data>
 </odoo>

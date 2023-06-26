@@ -10,6 +10,7 @@ class OtherIncomeSources(models.Model):
     contract_id = fields.Many2one(comodel_name="hr.contract", required=False, string="Contract")
     year_valid_from = fields.Date("Date From", required=True)
     year_valid_to = fields.Date("Date To")
+    is_weekly =  fields.Boolean("Is Additions Weekly?")
 
     @api.depends('contract_id')
     def compute_currency_id(self):

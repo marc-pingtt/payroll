@@ -55,16 +55,23 @@
                                 <t t-set="outer_count" t-value="default_value"/>
                                 <t t-set="outer_c_total" t-value="default_value"/>
                                 <t t-set="outer_a_total" t-value="default_value"/>
+
                                 <t t-set="totality" t-value="totals.get('totality')"/>
                                 <t t-set="deduction_list" t-value="totality.get('deduction_amount_index')"/>
+
                                 <t t-set="empty_value">&#32;</t>
+
                                 <t t-set="deduction_type" t-value="default_value"/>
                                 <t t-set="count" t-value="default_value"/>
+
                                 <t t-set="c_total" t-value="default_value"/>
+
                                 <t t-set="last_employee" t-value="default_value"/>
                                 <t t-set="last_type" t-value="default_value"/>
+
                                 <t t-set="current_employee" t-value="default_value"/>
                                 <t t-set="current_type" t-value="default_value"/>
+
                                 <t t-foreach="deduction_list" t-as="item">
                                     <tr>
                                             <t t-set="deduction_to_employee" t-value="totality.get('deduction_to_employee')"/>
@@ -83,6 +90,7 @@
                                                     <td t-attf-style="white-space:nowrap;"><span></span></td>
                                                     <td t-attf-style="white-space:nowrap;"><span></span></td>
                                                     <td t-attf-style="white-space:nowrap;"><span></span></td>
+
                                                     <t t-set="deduction_type" t-value="deduction_to_employee[count]"/>
                                                     <t t-set="c_total" t-value="default_value"/>
                                                     <t t-set="outer_c_total" t-value="default_value"/>
