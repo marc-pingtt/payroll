@@ -2,6 +2,7 @@ from odoo import models, _
 from datetime import datetime
 import calendar
 from decimal import Decimal
+import math
 
 
 class NisReport(models.AbstractModel):
@@ -13,10 +14,11 @@ class NisReport(models.AbstractModel):
         company = self.env.company
 
         bir_number = str(company.bir_file_number)
-        new_bir_number = [0, 0, 0, 0, 0, 0]
+        new_bir_number = ['\u200B', '\u200B',
+                          '\u200B', '\u200B', '\u200B', '\u200B']
         count_up = len(bir_number)
         count_down = len(new_bir_number)
-        if (len(bir_number) <= 6):
+        if (len(bir_number) <= 6 and company.bir_file_number != False):
             while count_up > 0:
                 new_bir_number[count_down-1] = bir_number[count_up-1]
                 count_up -= 1
@@ -24,6 +26,20 @@ class NisReport(models.AbstractModel):
         bir_number = new_bir_number
 
         telephone_number = str(company.phone)
+        new_telephone_number = ['\u200B', '\u200B',
+                                '\u200B', '\u200B', '\u200B', '\u200B', '\u200B']
+        count_down = len(telephone_number)
+        count_up = len(new_telephone_number)
+        if (company.phone != False):
+            while count_up > 0:
+                if (telephone_number[count_down - 1] != '-' and telephone_number[count_down - 1] != '(' and telephone_number[count_down - 1] != ')' and telephone_number[count_down - 1] != '+' and telephone_number[count_down - 1] != ' '):
+                    new_telephone_number[count_up -
+                                         1] = telephone_number[count_down - 1]
+                    count_up -= 1
+                count_down -= 1
+        telephone_number = new_telephone_number
+
+        nis_report_data = self.calculate_nis_report_data(data, docs)
 
         res = {
             'doc_ids': docids,
@@ -31,7 +47,7 @@ class NisReport(models.AbstractModel):
             'data': data,
             'docs': docs,
             'company': company,
-            'nis_report_data': self.nis_report_data(data, docs),
+            'nis_report_data': nis_report_data,
             'created_by': self.env.user.display_name,
             'bir_number': bir_number,
             'telephone_number': telephone_number,
@@ -39,31 +55,34 @@ class NisReport(models.AbstractModel):
         }
         return res
 
-    def nis_report_data(self, data, docs):
+    def calculate_nis_report_data(self, data, docs):
+        number_of_forms = math.ceil(len(docs.ids)/11)
         values = []
-        nib_numbers = []
-        names = []
-        dob = []
-        date_employed_and_last_date_worked = []
-        salary_for_period = []
-        value_of_contributions = []
-        total_value_per_employee = []
-        total_value = 0
-        total_employees = 0
+        nib_numbers = [[] for _ in range(number_of_forms)]
+        names = [[] for _ in range(number_of_forms)]
+        dob = [[] for _ in range(number_of_forms)]
+        date_employed_and_last_date_worked = [
+            [] for _ in range(number_of_forms)]
+        salary_for_period = [[] for _ in range(number_of_forms)]
+        value_of_contributions = [[] for _ in range(number_of_forms)]
+        total_value_per_employee = [[] for _ in range(number_of_forms)]
+        total_value = [[] for _ in range(number_of_forms)]
+        total_employees = [[] for _ in range(number_of_forms)]
         number_of_nis_periods = compute_number_mondays_inside_period(
             data.get('date_start'), data.get('date_end'))
 
-        # if data.get('all_employees') == True:
-        #     employees = self.env['hr.employee'].browse(data['employee_ids'])
+        count = 0
+        employee_counter = 0
+        loop_total_value = 0
 
         for person in docs:
-            total_employees += 1
-            nib_numbers.append(person.nis_number)
-            names.append(person.display_name)
-            # date_employed_and_last_date_worked.append(
-            #     person.contract_id.date_start)
+            employee_counter += 1
 
-            dob.append(person.birthday)
+            nib_numbers[count].append(
+                compute_nis_numbers(person.nis_number))
+            names[count].append(person.display_name)
+
+            dob[count].append(person.birthday)
             payslips = payslip_search(self, data.get(
                 'date_start'), data.get('date_end'), person.contract_id.id)
             gross = 0
@@ -71,16 +90,25 @@ class NisReport(models.AbstractModel):
                 for line in payslip.line_ids:
                     if line.code == "GROSS":
                         gross += line.amount
-                amount = compute_nis(payslip, gross, person.contract_id)
-                value_of_contributions.append(amount/4)
-                total_value_per_employee.append(amount)
-                total_value += amount
-            salary_for_period.append(gross)
+            amount = compute_nis(
+                payslip, gross, person.contract_id)
+            value_of_contributions[count].append(round(amount/4, 2))
+            loop_total_value += amount
+            salary_for_period[count].append(gross)
+            total_value_per_employee[count].append(amount)
             if (person.contract_id.date_end != False):
-                date_employed_and_last_date_worked.append(
+                date_employed_and_last_date_worked[count].append(
                     person.contract_id.date_end)
             else:
-                date_employed_and_last_date_worked.append(payslip.date_to)
+                date_employed_and_last_date_worked[count].append(
+                    payslip.date_to)
+
+            if (employee_counter == 11 or person.id == docs.ids[len(docs)-1]):
+                total_value[count].append(loop_total_value)
+                total_employees[count].append(employee_counter)
+                loop_total_value = 0
+                employee_counter = 0
+                count += 1
 
         values.append({
             'nib_numbers': nib_numbers,
@@ -93,6 +121,7 @@ class NisReport(models.AbstractModel):
             'total_value': total_value,
             'total_employees': total_employees,
             'number_of_nis_periods': number_of_nis_periods,
+            'number_of_forms': number_of_forms,
 
         })
         return values
@@ -199,3 +228,24 @@ def compute_nis(payslip, total_income, contract):
                 amount = 0
             cal = Decimal(amount) * total_mondays
             return Decimal(cal)
+
+
+def compute_nis_numbers(nis_number):
+    nis_blank_number = ['\u200B', '\u200B',
+                        '\u200B', '\u200B', '\u200B', '\u200B', '\u200B', '\u200B']
+
+    if (nis_number == False):
+        return nis_blank_number
+
+    nis_number = str(nis_number)
+    new_nis_number = nis_blank_number
+    count_up = len(nis_number)
+    count_down = 8
+
+    while (count_up > 0):
+        new_nis_number[count_down - 1] = nis_number[count_up - 1]
+        count_down -= 1
+        count_up -= 1
+
+    nis_number = new_nis_number
+    return nis_number

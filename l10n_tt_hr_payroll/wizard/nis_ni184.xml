@@ -9,8 +9,8 @@
                     <group>
                         <label for="date_start" string="Period"/>
                         <div>
-                            From<field name="date_start" class="oe_inline col-sm-5"/>
-                            to<field name="date_end" class="oe_inline col-sm-5"/>
+                            From &#32; <field name="date_start" class="oe_inline col-sm-5"/>
+                            To &#32; <field name="date_end" class="oe_inline col-sm-5"/>
                         </div>
                     </group>
                         <group>

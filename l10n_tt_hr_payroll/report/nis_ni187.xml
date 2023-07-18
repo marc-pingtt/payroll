@@ -4,754 +4,1095 @@
         <template id="nis_ni187_template">
             <t t-call="web.html_container">
                 <t t-call="web.basic_layout">
-                    <table class="table  dark-border" width="600" border="1">
-                        <tbody>
-                        <t t-set="empty_value">&#32;</t>
-                            <tr>
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <h5 style="font-size: 30px; font-weight: bold; ">
-                                            <u style="float: center; line-height: 0.1;">THE NATIONAL INSURANCE BOARD</u>
-                                            <p style="float: right; width: 250px; text-align: right; font-weight: bold; line-height: 0.01; font-size: 25px;">NI 187</p>
-                                        </h5>
-                                        
-                                        <h5 style="font-size: 30px; font-weight: bold;">
-                                            <u style="float: center; line-height: 0.1; padding-left:250px;">SUMMARY OF NATIONAL INSURANCE CONTRIBUTIONS DUE/IN ARREARS</u>
-                                        </h5>
-                                        <br/>
-                                    </div>
-                                </div>
-                            </tr>
-                            <tr>
-                                <div class="d-flex" style="width:150%;font-size:30px;padding-left:10px;">
-                                    <p style="width:250px;font-weight: bold;">
-                                        <u>Instructions:</u>
-                                    </p>
-                                </div>
-                            </tr>
-                            <tr>
-                                <div>
-                                    <p style="width:500px; font-size: 25px; line-height: 0.01; padding-top:-3px; nowrap; ">1. Please complete this form in duplicate.</p>
-                                </div>
-                            </tr>
-                            <tr>
-                                <div>
-                                <p style="width:100%;font-size:25px;font-weight: bold; padding-left:50px;line-height: 0.01; padding-top:10px; margin-bottom:-5px;">WARNING: SUBMISSION OF FALSE OR MISLEADING INFORMATION IS AN OFFENSE PUNISHABLE BY LAW</p>
-                                </div>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <style>
-                        .rounded-table {
-                        border-collapse: collapse;
-                        border-radius: 10px;
-                        overflow: hidden;
-                        padding-top: -10px;
-                        }
-                        .rounded-table th,
-                        .rounded-table td {
-                        padding: 10px;
-                        border: 3px solid #000000;
-                        padding-top: -10px;
-                        }
-                        </style>
-                        <style>
-                        .rounded-border {
-                            border-radius: 10px;
-                            overflow: hidden;
-                            border: 2px solid black;
-                            }
-                        </style>
-                    <div class="table-responsive">      
-                    <table class="rounded-table" width="100%" border="1">
-                        <tbody>
-                            <tr>
-                                <td colspan="12">
-                                    <div class="row">
-                                        <div class="col-5" style="font-size: 18px; font-weight: bold;">
-                                        <p>
-                                            <u>SECTION "A" - EMPLOYER INFORMATION</u>
-                                        </p>
-                                        </div>
-                                        <div class="col-1 rounded-border" style="font-size: 14px; font-weight: bold; padding-right: 20px; padding-left: 5px; text-align: center; padding-top: 0;padding-bottom:5px;">
-                                            <p>FOR OFFICIAL USE S.C. CODE                                           
-                                                <div class="segmented-box" style="padding-top: 3px;padding-left:5px;">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="122" height="25">
-                                                        <rect x="2" y="0" width="162" height="25" fill="none" stroke="black" stroke-width="2" />
-                                                        <line x1="22" y1="0" x2="22" y2="25" stroke="black" stroke-width="1" />
-                                                        <line x1="42" y1="0" x2="42" y2="25" stroke="black" stroke-width="1" />
-                                                        <line x1="62" y1="0" x2="62" y2="25" stroke="black" stroke-width="1" />
-                                                        <line x1="82" y1="0" x2="82" y2="25" stroke="black" stroke-width="1" />
-                                                        <line x1="102" y1="0" x2="102" y2="25" stroke="black" stroke-width="1" />
-                                                        <line x1="122" y1="0" x2="122" y2="25" stroke="black" stroke-width="1" />
+                    <div class="container">
+                        <div class="row" style="page-break-before: always;" >
+                            <div class="col-12 text-center">
+                            <t t-set="empty_value">&#x200B;</t>
+                            <h5 style="font-size: 15px; font-weight: bold;">
+                                <u style="float: center; display:inline; line-height:0.01;">THE NATIONAL INSURANCE BOARD</u>
+                                <p style="float: right; width: 250px; text-align: right; font-weight: bold; display:inline; line-height:0.01; font-size: 15px;">NI 187</p>
+                            </h5>
+                            <h5 style="font-size: 15px; font-weight: bold;">
+                                <u style="text-align:center; line-height:0.01; padding-left:150px; display:inline;">SUMMARY OF NATIONAL INSURANCE CONTRIBUTIONS DUE/IN ARREARS</u>
+                            </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>
+                                    <p style=" margin-right: 10px;line-height:0.01; font-size: 12px; font-weight:bold;"><u>Instructions:</u></p>
+                                    <p> 1. Please complete this form in duplicate.</p>
+                                    <p style="margin-left: 20px;line-height:0.01; font-size: 12px; font-weight:bold;"> WARNING: SUBMISSION OF FALSE OR MISLEADING INFORMATION IS AN OFFENSE PUNISHABLE BY LAW </p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div style="border: 2px solid black; border-radius: 10px; padding: 10px;">
+                                <table>
+                                        <p style="float: left; text-align: right; font-weight: bold; line-height:0.01; font-size: 12px;"><u>SECTION "A" - EMPLOYER INFORMATION</u></p>
+                                        <div style="border: 1px solid black; border-radius: 10px; padding: 10px; float:right; display: inline;">
+                                            <p style="line-height:0.01; font-size: 12px;">FOR OFFICIAL USE</p>
+                                            <p style="line-height:0.01;font-size: 12px; padding-left:25px;">S.C. CODE
+                                                <div class="segmented-box" style="margin-right:10px; display: inline; line-height:0.01; padding-left:5px;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="142" height="22">
+                                                        <rect x="2" y="0" width="122" height="22" fill="none" stroke="black" stroke-width="2" />
+                                                        <line x1="22" y1="0" x2="22" y2="22" stroke="black" stroke-width="1" />
+                                                        <line x1="42" y1="0" x2="42" y2="22" stroke="black" stroke-width="1" />
+                                                        <line x1="62" y1="0" x2="62" y2="22" stroke="black" stroke-width="1" />
+                                                        <line x1="82" y1="0" x2="82" y2="22" stroke="black" stroke-width="1" />
+                                                        <line x1="102" y1="0" x2="102" y2="22" stroke="black" stroke-width="1" />
                                                     </svg>
                                                 </div>
                                             </p>
                                         </div>
+                                    <p style="padding-top:20px; line-height:0.01; font-size: 12px;">EMPLOYER'S TRADE NAME:</p>
+                                    <p style="padding-top:10px; line-height:0.01; font-size: 12px;">ADDRESS:</p>
+                                    <p style="padding-top:10px; display: inline; line-height:0.01; font-size: 12px;">TELEPHONE NO:
+                                    <div class="segmented-box" style="margin-right:10px; display: inline; line-height:0.01; padding-left:5px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="182" height="22">
+                                            <rect x="2" y="0" width="162" height="22" fill="none" stroke="black" stroke-width="2" />
+                                            <line x1="22" y1="0" x2="22" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="42" y1="0" x2="42" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="62" y1="0" x2="62" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="82" y1="0" x2="82" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="102" y1="0" x2="102" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="122" y1="0" x2="122" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="142" y1="0" x2="142" y2="22" stroke="black" stroke-width="1" />
+                                        </svg>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="col-3" style="font-size:14px; font-weight: bold; padding-top:-30px; ">
-                                            <p>EMPLOYER'S TRADE NAME :
-                                            </p>
+                                    <p style="padding-top:10px; display: inline; line-height:0.01; font-size: 12px;">EMPLOYER REG NO:
+                                        <div class="segmented-box" style="margin-right:10px; line-height:0.01; padding-left:5px; display: inline; ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="142" height="22">
+                                                    <rect x="2" y="0" width="122" height="22" fill="none" stroke="black" stroke-width="2" />
+                                                    <line x1="22" y1="0" x2="22" y2="22" stroke="black" stroke-width="1" />
+                                                    <line x1="42" y1="0" x2="42" y2="22" stroke="black" stroke-width="1" />
+                                                    <line x1="62" y1="0" x2="62" y2="22" stroke="black" stroke-width="1" />
+                                                    <line x1="82" y1="0" x2="82" y2="22" stroke="black" stroke-width="1" />
+                                                    <line x1="102" y1="0" x2="102" y2="22" stroke="black" stroke-width="1" />
+                                            </svg>
                                         </div>
-                                        <div class="col-2" style="font-size:14px; font-weight: bold; padding-left:-150px; text-align:left;">
-                                            <p>
-                                                <t t-esc="company.name"/>
-                                            </p>
-                                        </div>                      
-                                    </div>                                 
-                                    <div class="row">
-                                        <div class="col-3" style="font-size:14px; font-weight: bold; ">
-                                            <p>ADDRESS</p>
-                                        </div>
-                                        <div class="col-2" style="font-size:14px; font-weight: bold; padding-left:-20px; text-align:left; ">
-                                            <p>
-                                                <span style="font-size: 12px; font-weight: bold;">
-                                                    <span t-esc="company.street"/>
-                                                    <span t-esc="company.street2"/>
-                                                    <span t-esc="company.city"/>
-                                                    <span t-esc="company.state_id.name"/>
-                                                    <span t-esc="company.zip"/>
-                                                    <span t-esc="company.country_id.display_name"/>
-                                                </span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3" style="font-size:14px; font-weight: bold;  ">
-                                            <p>TELEPHONE NO
-                                            </p>
-                                            <div class="segmented-box" style="padding-top:-15px; padding-left:250px;">
-                                                <t t-set="telephone_number" t-value="str(company.phone)"/>
-                                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="25">
-                                                <rect x="2" y="0" width="162" height="25" fill="none" stroke="black" stroke-width="2" />
-                                                <line x1="22" y1="0" x2="22" y2="25" stroke="black" stroke-width="1" />
-                                                <line x1="42" y1="0" x2="42" y2="25" stroke="black" stroke-width="1" />
-                                                <line x1="62" y1="0" x2="62" y2="25" stroke="black" stroke-width="1" />
-                                                <line x1="82" y1="0" x2="82" y2="25" stroke="black" stroke-width="1" />
-                                                <line x1="102" y1="0" x2="102" y2="25" stroke="black" stroke-width="1" />
-                                                <line x1="122" y1="0" x2="122" y2="25" stroke="black" stroke-width="1" />
-                                                <line x1="142" y1="0" x2="142" y2="25" stroke="black" stroke-width="1" />
-                                                <text x="9" y="20" font-size="20" fill="black" t-esc="telephone_number[0]"></text>
-                                                <text x="29" y="20" font-size="20" fill="black" t-esc="telephone_number[1]"></text>
-                                                <text x="49" y="20" font-size="20" fill="black" t-esc="telephone_number[2]"></text>
-                                                <text x="71" y="20" font-size="20" fill="black">-</text>
-                                                <text x="89" y="20" font-size="20" fill="black" t-esc="telephone_number[3]"></text>
-                                                <text x="109" y="20" font-size="20" fill="black" t-esc="telephone_number[4]"></text>
-                                                <text x="129" y="20" font-size="20" fill="black" t-esc="telephone_number[5]"></text>
-                                                <text x="149" y="20" font-size="20" fill="black" t-esc="telephone_number[6]"></text>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div class="col-2" style="font-size:14px; font-weight: bold; text-align:right: padding-right:20px; ">
-                                            <p>EMPLOYER REG NO: </p>
-                                            </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3" style="font-size:14px; font-weight: bold; ">
-                                            <p>CONTRIBUTIONS DUE FOR PAY PERIOD</p>
-                                        </div>
-                                        <div class="col-2" style="font-size:14px; font-weight: bold; ">
-                                            <p>
-                                                <t t-esc="data['date_start']"/>
-                                            </p>
-                                        </div>
-                                        <div class="col-2" style="font-size:14px; font-weight: bold; ">
-                                            <p>TO</p>
-                                        </div>
-                                        <div class="col-2" style="font-size:14px; font-weight: bold; ">
-                                            <p>
-                                                <t t-esc="data['date_end']"/>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <div class="row">
-                                                <div class="col-3" style="font-size:14px; ">
-                                                    <p>WHERE THE PERIOD EXCEEDS ONE MONTH, COMPLETE SECTION F
-                                                        GIVING SEPARATE DETAILS FOR EACH MONTH:
-                                                    </p>
-                                                </div>
-                                                <div class="col-2" style="font-size:14px; ">
-                                                    <p>
-                                                        <!-- <t t-esc="company.phone"/> -->
-                                                    </p>
-                                                </div>
-
-                                                <div class="col-3"
-                                                     style="font-size:14px; font-weight: bold; text-align: right; ">
-                                                    <p>NO.OF EMPLOYEES BEING PAID FOR : <t t-esc = "nis_report_data[0].get('total_employees')"/>
-                                                    </p>
-                                                </div>
-                                                <div class="col-2" style="font-size:14px; font-weight: bold; ">
-                                                    <p>
-                                                        <!--                                                <t t-esc="data['company'].phone"/>-->
-                                                    </p>
-                                                </div>
-                                    </div>
-
-                                </td>
-                                <!--                                <td colspan="5">-->
-
-                                <!--                                </td>-->
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <div>
-                                                <div class="row">
-                                                    <div class="col-12"
-                                                         style="font-size:14px; font-weight: bold; ">
-                                                        <p>
-                                                            <u>SECTION "B" ‑ VALUE OF CONTRIBUTIONS PAYABLE</u>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <br/>
-                                                <table border="1">
-                                                    <tbody>
-                                                    <t t-set="employee" t-value="nis_report_data[0]"/>
-                                                    <div class="text-center">
-                                                        <tr style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                            <td width ="100px" height="20px">
-                                                                <div class="text-center">
-                                                                <span>(a) BALANCE B/F</span>
-                                                                </div>
-                                                            </td>
-                                                            <td width ="100px" height="20px">
-                                                            <div class="text-center">
-                                                                <span>$</span>
-                                                                </div>
-                                                            </td>
-                                                            <td width ="100px" height="20px">
-                                                            <div class="text-center">
-                                                                <span>¢</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                            <td width ="100px" height="20px">
-                                                                <span>(b) CONTRIBUTIONS DUE THIS PERIOD</span>
-                                                            </td>
-                                                             <td>
-                                                             <t t-set="dollars" t-value="int(employee.get('contributions'))"/> 
-                                                             <t t-esc="dollars"/>                                         
-                                                            </td>
-                                                            <td>
-                                                            <t t-set="cents" t-value="int(employee.get('contributions') % 1 * 100)"/> 
-                                                             <t t-esc="cents"/>                                                              
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                            <td width ="100px" height="20px">
-                                                                (c) PENALTY (If Applicable)
-                                                            </td>
-                                                             <td>                                          
-                                                            </td>
-                                                            <td>                                                               
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                            <td width ="100px" height="20px">
-                                                                (d) INTEREST (If Applicable)
-                                                            </td>
-                                                             <td>                                          
-                                                            </td>
-                                                            <td>                                                               
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                            <td width ="100px" height="20px">
-                                                                (e) TOTAL AMOUNT DUE (a+b+c+d)
-                                                            </td> 
-                                                             <td> 
-                                                             <t t-set="dollars" t-value="int(employee.get('total_due'))"/> 
-                                                             <t t-esc="dollars"/>                                           
-                                                            </td>                
-                                                            <td>
-                                                            <t t-set="cents" t-value="int(employee.get('total_due'))"/> 
-                                                             <t t-esc="cents"/>                                                                
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                            <td width ="100px" height="20px">
-                                                                (f) AMOUNT PAID
-                                                            </td>
-                                                            <td>
-                                                            <t t-set="dollars" t-value="int(employee.get('amount_paid'))"/> 
-                                                             <t t-esc="dollars"/>                                            
-                                                            </td>
-                                                            <td>
-                                                            <t t-set="cents" t-value="int(employee.get('amount_paid'))"/> 
-                                                             <t t-esc="cents"/>                                                                
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                            <td width ="100px" height="20px">
-                                                                (g) BALANCE C/F
-                                                            </td>
-                                                             <td>
-                                                             <t t-set="dollars" t-value="int(employee.get('balance'))"/> 
-                                                             <t t-esc="dollars"/>                                           
-                                                            </td>
-                                                            <td>
-                                                            <t t-set="cents" t-value="int(employee.get('balance'))"/> 
-                                                             <t t-esc="cents"/>                                                                
-                                                            </td>
-                                                        </tr>
-                                                    </div>
-                                            </tbody>
-                                        </table>
-                                            
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                                <div class="row">
-                                                    <div class="col-12"
-                                                         style="font-size:14px; font-weight: bold; ">
-                                                        <p>
-                                                            <u>SECTION "C" ‑ METHOD OF PAYMENT</u>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <br/>
-                                                <table>
-                                                    <tbody>
-                                                    <div class="text-center">
-                                                        <tr style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-
-                                                        <tr>
-                                                            <td rowspan="2" width ="100px" height="50px" style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                                (1)
-                                                                <br/>
-                                                                HOW PAID
-                                                            </td>
-                                                            <td colspan="2" style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                                (2)
-                                                                <br/>AMOUNT
-                                                                <br/>
-                                                            </td>
-
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                                $
-                                                            </td>
-                                                            <td style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                                ¢
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                                CASH
-                                                                <br/>(State details overleaf)
-                                                            </td>
-                                                            <td>
-                                                                
-                                                            </td>
-                                                            <td>
-                                                               
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="width:150px;font-weight: bold;font-size:10px; text-align:center;">
-                                                                CHEQUE<br/>(State details overleaf)
-                                                            </td>
-                                                            <td>
-                                                              
-                                                            </td>
-                                                            <td>
-                                                                
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="width:150px;font-weight: bold;font-size:12px; text-align:center;">
-                                                                <span>TOTAL</span>
-                                                            </td>
-                                                            <td>
-                                                                
-                                                            </td>
-                                                            <td>
-                                                                
-                                                            </td>
-                                                        </tr>
-                                                    </tr>
-                                                    </div>
-                                                    </tbody>
-                                                </table>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="18">
-                                    <div class="row">
-                                        <div class="col-9" style="font-size:14px; font-weight: bold; ">
-                                            <p>
-                                                <u>SECTION "D" ‑ CERTIFICATE OF DECLARANT</u>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <div class="row">
-                                        <div class="col-9" style="font-size:15px; ">
-                                            <p>I solemnly and sincerely declare that the information given above is a
-                                                correct reflection of my employee population and National
-                                                Insurance obligations
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <div style="left-margin:20px;">
-                                        <div class="row" style="width:100%;font-size:18px;padding-right:100px; ">
-                                            <div class="d-flex" style="width:100%;font-size:18px;padding-right:100px; left-margin:20px;">
-                                                <p style="width:150px;font-weight: bold;">NAME</p>
-                                                <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;
-                                position:relative">
-                                                    <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
-                                                </div>
-                                                <div style="width:225px;height:30px;padding-left:100px;position:relative">
-                                                    <p style="width:150px;font-weight: bold;">
-                                                        COMPANY STAMP<br/>(If Any)
-                                                    </p>
-                                                    <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-3" style="font-size:15px; ">
-
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <p style="width:150px;font-weight: bold;">SIGNATURE</p>
-                                            <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;
-                                position:relative">
-                                                <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <p style="width:150px;font-weight: bold;">POSITION</p>
-                                            <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;
-                                position:relative">
-                                                <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
-                                            </div>
-                                        </div>
-                                        <div style="width:225px;height:30px;padding-left:600px;position:relative">
-                                    <p style="width:150px;font-weight: bold;">
-                                    <span> Date: </span>
-                                        <t t-esc="context_timestamp(
-                                datetime.datetime.now()).strftime('%Y-%m-%d')"/>
                                     </p>
-                                    <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
-                                </div>
-                                        <br/>
-
-                                    </div>
-                                </td>
-                                <!--                                <td colspan="5">-->
-
-                                <!--                                </td>-->
-                            </tr>
-                            <tr>
-                                <td colspan="9">
+                                    </p>
+                                    <p style="padding-top:10px; line-height:0.01; display: inline; font-size: 12px;"><br/>CONTRIBUTIONS DUE FOR PAY PERIOD:
+                                    <div class="segmented-box" style="margin-right:5px; padding-left:5px; display: inline; ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="22">
+                                            <rect x="2" y="0" width="162" height="22" fill="none" stroke="black" stroke-width="2" />
+                                            <line x1="22" y1="10" x2="22" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="42" y1="10" x2="42" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="62" y1="10" x2="62" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="82" y1="0" x2="82" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="102" y1="10" x2="102" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="122" y1="0" x2="122" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="142" y1="10" x2="142" y2="22" stroke="black" stroke-width="1" />
+                                            </svg>
+                                        </div>
+                                    </p>
+                                    <p style=" margin-right: 10px; display: inline; font-size: 15px;">TO :
+                                    <div class="segmented-box" style="margin-right:10px; display: inline; padding-left:5px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="22">
+                                            <rect x="2" y="0" width="162" height="22" fill="none" stroke="black" stroke-width="2" />
+                                            <line x1="22" y1="10" x2="22" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="42" y1="10" x2="42" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="62" y1="10" x2="62" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="82" y1="0" x2="82" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="102" y1="10" x2="102" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="122" y1="0" x2="122" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="142" y1="10" x2="142" y2="22" stroke="black" stroke-width="1" /> 
+                                            </svg>
+                                        </div>
+                                    </p>
                                     <div class="row">
-                                        <div class="col-9" style="font-size:14px; font-weight: bold;">
-                                            <p>
-                                                <u>SECTION "E" ‑ FOR OFFICIAL USE</u>
-                                            </p>
+                                        <div class="col-12">
+                                        <p style="margin-right: 10px;   padding-left: 270px; display: inline; font-size:12; font-size: 9px; line-height:0.01;">YYYY</p>
+                                        <p style="margin-right: 10px;   padding-left: 20px; display: inline; font-size:12; font-size: 9px; line-height:0.01;">MM</p>
+                                        <p style="margin-right: 10px;   padding-left: 5px; display: inline; font-size:12; font-size: 9px; line-height:0.01;">DD</p>
+
+                                        <p style="margin-right: 10px;   padding-left: 125px; display: inline; font-size:12; font-size: 9px; line-height:0.01;">YYYY</p>
+                                        <p style="margin-right: 10px;   padding-left: 20px; display: inline; font-size:12; font-size: 9px; line-height:0.01;">MM</p>
+                                        <p style="margin-right: 10px;   padding-left: 5px; display: inline; font-size:12; font-size: 9px; line-height:0.01;">DD</p>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-9" style="font-size:15px; ">
-                                            <p>I solemnly and sincerely declare that the information given above is a
-                                                correct reflection of my employee population and National
-                                                Insurance obligations.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="padding-top:15px; padding-left:160px; ">
-                                        <div class="col-6">
-                                            <div class="d-flex" style="width:100%;font-size:18px;padding-right:100px;">
-                                                <p style="width:150px;font-weight: bold; padding-right:20px;">AMOUNT RECEIVED</p>
-                                                <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;
-                            position:relative">
-                                                    <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
-                                                </div>
-                                                <p style="width:150px;font-weight: bold; padding-right:20px;">RECEIPT NO.</p>
-                                                <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;
-                            position:relative">
-                                                    <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
-                                                </div>
-                                                <p style="width:150px;font-weight: bold; padding-right:20px;">SIGNATURE OF CASHIER</p>
-                                                <div style="border-bottom: 1px solid black;width:225px;height:30px;padding-left:100px;
-                            position:relative">
-                                                    <p style="position:absolute;top:0;left:0;right:0;bottom:0;margin:0;"/>
-                                                </div>
-                                                <p style="width:150px;font-weight: bold; padding-right:20px;">NI 184 RECEIVED</p>
-                                                <div style="padding-left:20px;  padding-right:20px;">
-                                                <input type="checkbox" id="checkboxId" name="checkboxName" value="checkboxValue"/>
-                                                </div>
-                                                <p style="width:150px;font-weight: bold; padding-right:20px;">DISKETTE RECEIVED</p>
-                                                <div style="padding-left:20px;">
-                                                <input type="checkbox" id="checkboxId" name="checkboxName" value="checkboxValue"/>
-                                                </div>
+                                        <div class="col-12">
+                                        <p style="padding-top:20px; line-height:0.01; font-size: 12px; display:inline;">WHERE THE PERIOD EXCEEDS ONE MONTH, COMPLETE</p>
+                                        <p style="padding-top:20px; line-height:0.01; font-size: 12px; display:inline; font-weight:bold;"><u>SECTION F</u></p>
+                                        <p style="padding-top:20px; line-height:0.01; font-size: 12px; display:inline; padding-left:100px;">NO. OF EMPLOYEES BEING PAID FOR:
+                                        <div class="segmented-box" style="margin-right:10px; display: inline; padding-left:5px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="60" height="22">
+                                            <rect x="2" y="0" width="40" height="22" fill="none" stroke="black" stroke-width="2" />
+                                            </svg>
                                             </div>
+                                        </p>
+                                        <p style="line-height:0.01; font-size: 12px;">GIVING SEPARATE DETAILS FOR EACH MONTH:</p>
                                         </div>
                                     </div>
+                                    <svg width="100%" height="1">
+                                        <line x1="0" y1="0" x2="100%" y2="0" style="stroke: black;"/>
+                                    </svg>
+                                    <div class="col-12">
+                                    <div style="display: flex;">                                   
+                                    <p style="float: left; text-align: right; font-weight: bold; line-height:0.01; font-size: 12px; display:inline;"><u>SECTION "B" - VALUE OF CONTRIBUTIONS PAYABLE</u></p>
+                                    <p style="float: right; text-align: right; font-weight: bold; line-height:0.01; font-size: 12px; display:inline; padding-right:50px; padding-left:350px;"><u>SECTION "C" - METHOD OF PAYMENT</u></p>
                                     <br/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="14">
-                                    <div class="row" style="page-break-before: always;" >
-                                        <div class="col-5" style="font-size:14px; font-weight: bold; ">
-                                            <p>
-                                                <u>SECTION "F" - DETAILS OF PAYMENTS FOR PERIODS EXCEEDING ONE MONTH</u>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <div class="row">
-                                        <div class="col-2" style="font-size:14px; font-weight: bold; ">
-                                            <p>FROM</p>
-                                        </div>
-                                        <div class="col-2" style="font-size:14px; font-weight: bold; ">
-                                            <p>TO</p>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <div class="row">
-                                    <div class="table-responsive" style="overflow-x: auto;">
-                                        <table class="table  dark-border" width="100%" border="1">
-                                            <tbody>
-                                                <tr>
-                                                    <th colspan="2" rowspan="2">YR/MTH/DAY</th>
-                                                    <th colspan="2" rowspan="2">YR/MTH/DAY</th>
-                                                    <th colspan="2">CONTRIBUTIONS<br/>DUE
-                                                    </th>
-
-                                                    <th colspan="2">PENALTY</th>
-                                                    <th colspan="2">INTEREST</th>
-                                                    <th colspan="2">TOTAL</th>
-                                                    <th colspan="2">NO. OF<br/>EMPLOYEES
-                                                    </th>
-                                                    <th colspan="2">FOR OFFICIAL USE</th>
-                                                    <th colspan="2">
-                                                        TRANSACTION SLIP #
-                                                    </th>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        $
-                                                    </td>
-                                                    <td>
-                                                        ¢
-                                                    </td>
-                                                    <td>
-                                                        $
-                                                    </td>
-                                                    <td>
-                                                        ¢
-                                                    </td>
-                                                    <td>
-                                                        $
-                                                    </td>
-                                                    <td>
-                                                        ¢
-                                                    </td>
-                                                    <td>
-                                                        $
-                                                    </td>
-                                                    <td>
-                                                        ¢
-                                                    </td>
-                                                    <td>
-                                                        $
-                                                    </td>
-                                                    <td>
-                                                        ¢
-                                                    </td>
-                                                    <td>                                                   
-                                                    </td>
-                                                    <td>                                                   
-                                                    </td>
-                                                    <td>                                                   
-                                                    </td>
-                                                    <td>                                                   
-                                                    </td>
-                                                    <td>                                                   
-                                                    </td>
-                                                    <td>                                                   
-                                                    </td>
-                                                    <td>                                                   
-                                                    </td>
-                                                    <td>                                                   
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2"><t t-esc="data['date_start']"/></td>
-                                                    <td colspan="2"><t t-esc="data['date_end']"/></td> 
-                                                    <td><t t-set="dollars" t-value="int(employee.get('total_due'))"/> 
-                                                        <t t-esc="dollars"/></td>
-                                                    <td><t t-set="cents" t-value="int(employee.get('total_due') % 1 * 100)"/> 
-                                                        <t t-esc="cents"/></td>
-                                                    <td></td>
-                                                    <td></td>  
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td><t t-set="dollars" t-value="int(employee.get('total_due'))"/> 
-                                                        <t t-esc="dollars"/></td>
-                                                    <td><t t-set="cents" t-value="int(employee.get('total_due') % 1 * 100)"/> 
-                                                        <t t-esc="cents"/></td>
-                                                    <td><t t-esc = "nis_report_data[0].get('total_employees')"/></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2" style="font-size:14px; font-weight: bold; ">
-                                                        TOTAL
-                                                    </td>
-                                                    <td colspan="2"></td>
-                                                    <td><t t-set="dollars" t-value="int(employee.get('total_due'))"/> 
-                                                        <t t-esc="dollars"/></td>
-                                                    <td><t t-set="cents" t-value="int(employee.get('total_due') % 1 * 100)"/> 
-                                                        <t t-esc="cents"/></td>
-                                                    <td></td>
-                                                    <td></td>  
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td><t t-set="dollars" t-value="int(employee.get('total_due'))"/> 
-                                                        <t t-esc="dollars"/></td>
-                                                    <td><t t-set="cents" t-value="int(employee.get('total_due') % 1 * 100)"/> 
-                                                        <t t-esc="cents"/></td>
-                                                    <td><t t-esc = "nis_report_data[0].get('total_employees')"/></td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <div class="row">
-                                        <div class="col-9" style="font-size:16px; font-weight: bold; ">
-                                            <p>
-                                                * Enter amounts on page 1. Sec B
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <table class="table  dark-border" width="100%" border="1">
-                                        <tbody>
-                                            <tr>
-                                                <th colspan="3">CASH DETAILS</th>
-                                                <th colspan="3">CHEQUE DETAILS</th>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="2">
-                                                    DENOMINATION
-                                                </td>
-                                                <td colspan="2">
-                                                    AMOUNT
-                                                </td>
-                                                <td rowspan="2">
-                                                    BANK AND CHEQUE NUMBER
-                                                </td>
-                                                <td colspan="2">
-                                                    AMOUNT
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    $
-                                                </td>
-                                                <td>
-                                                    ¢
-                                                </td>
-                                                <td>
-                                                    $
-                                                </td>
-                                                <td>
-                                                    ¢
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    $ 100 X
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    $ 20 X
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    $ 10 X
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    $ 5 X
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    $ 1 X
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="font-size:16px; font-weight: bold; ">
-                                                    COINS
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="font-size:16px; font-weight: bold; ">
-                                                    TOTAL
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-
-                                            </tr>
-                                        </tbody>
+                                    <table style="display:inline-block; border: 2px solid black; border-radius: 10px; padding: 10px;">
+                                        <tr>
+                                            <th colspan="1" style="padding-left:5px; padding-right:5px;"><text style="font-size:12px;">(a) BALANCE B/F</text>
+                                            </th>
+                                            <th colspan="1" style="padding-left:5px; padding-right:5px;"><text style="font-size:12px;">$</text>
+                                            </th>
+                                            <th colspan="1" style="padding-left:5px; padding-right:5px;"><text style="font-size:12px;">c</text>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">(b) CONTRIBUTIONS DUE</text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">(c) PENALTY (If Applicable)</text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">(d) INTEREST (If Applicable)</text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">(e) TOTAL AMOUNT DUE (a+b+c+d)</text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">(f) AMOUNT PAID</text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">(g) BALANCE C/F</text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                            <th><text></text>
+                                            </th>
+                                        </tr>                                                
                                     </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    <table style="float:right; padding-right:100px; padding-top:-20px; padding-bottom:20px; display:inline-block; border: 2px solid black; border-radius: 10px; padding: 10px;">
+                                    <tr>
+                                    <th rowspan="2"><text style="font-size:12px; padding-left:5px; padding-right:5px;">(1)<br/>HOW PAID</text>
+                                    </th>
+                                    <th colspan="2"><text style="font-size:12px; padding-left:5px; padding-right:5px;">(2)<br/>AMOUNT</text>
+                                    </th>
+                                    </tr>
+                                    <tr>
+                                    <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">$</text>
+                                    </th>
+                                    <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">C</text>
+                                    </th>
+                                    </tr>
+                                    <tr>
+                                    <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">CASH<br/>(State Details Overlead)</text>
+                                    </th>
+                                    <th>
+                                    </th>
+                                    <th>
+                                    </th>
+                                    </tr>
+                                    <tr>
+                                    <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">CHEQUE<br/>(State Details Overlead)</text>
+                                    </th>
+                                    <th>
+                                    </th>
+                                    <th>
+                                    </th>
+                                    </tr>
+                                    <tr>
+                                    <th><text style="font-size:12px; padding-left:5px; padding-right:5px;">TOTAL</text>
+                                    </th>
+                                    <th>
+                                    </th>
+                                    <th>
+                                    </th>
+                                    </tr>
+                                    </table>
+                                    <br/>
+                                    </div>                                   
+                                    <div class="col-12" style="border: 2px solid black; border-radius: 10px; padding: 10px;">
+                                    <p style="float: left; text-align: right; font-weight: bold; line-height:0.01; font-size: 12px;"><u>SECTION "D" -  CERTIFICATE OF DECLARANT</u></p>
+                                    <p style="font-size:12px; float:left;">I solemnly and sincerely declare that the information given is a correct reflection of my employee population and National Insurance obligations
+                                    </p>
+                                    <p style="clear: both; padding-top:20px; line-height:0.01; font-size: 12px;">NAME:</p>
+                                    <p style="padding-left:650px; line-height:0.01; font-size: 12px;">COMPANY STAMP</p>
+                                    <p style="padding-top:10px; line-height:0.01; font-size: 12px;">SIGNATURE:____________________________________________________</p>
+                                    <p style="padding-top:10px; display: inline; line-height:0.01; font-size: 12px;">POSITION:</p>
+                                    <p style="padding-left:400px; display: inline; line-height:0.01; font-size: 12px;">DATE:
+                                    <div class="segmented-box" style="margin-right:10px; display: inline; padding-left:20px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="22">
+                                            <rect x="2" y="0" width="162" height="22" fill="none" stroke="black" stroke-width="2" />
+                                            <line x1="22" y1="10" x2="22" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="42" y1="10" x2="42" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="62" y1="10" x2="62" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="82" y1="0" x2="82" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="102" y1="10" x2="102" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="122" y1="0" x2="122" y2="22" stroke="black" stroke-width="1" />
+                                            <line x1="142" y1="10" x2="142" y2="22" stroke="black" stroke-width="1" /> 
+                                            </svg>
+                                        </div>
+                                    </p>
+                                        <div class="col-12">
+                                        <p style="margin-right: 10px;   padding-left: 550px; display: inline; font-size:12; font-size: 9px; line-height:0.01;">YYYY</p>
+                                        <p style="margin-right: 10px;   padding-left: 20px; display: inline; font-size:12; font-size: 9px; line-height:0.01;">MM</p>
+                                        <p style="margin-right: 10px;   padding-left: 5px; display: inline; font-size:12; font-size: 9px; line-height:0.01;">DD</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-12" style="border: 2px solid black; border-radius: 10px; padding: 10px;">
+                                        <p style="float: left; text-align: right; font-weight: bold; line-height:0.01; font-size: 12px;"><u>SECTION "E" -  FOR OFFICIAL USE</u></p>
+                                        <br/>
+                                         <div style="padding-right:20px; display: inline;">
+                                        <input type="checkbox" id="checkboxId" name="checkboxName" value="checkboxValue"/>
+                                        </div>
+                                         <p style="width:150px;font-size: 12px; padding-right:20px; display: inline; ">NI 184 RECEIVED</p>
+                                         <div style="padding-left:20px; display: inline;">
+                                        <input type="checkbox" id="checkboxId" name="checkboxName" value="checkboxValue"/>
+                                        </div>             
+                                        <p style="width:150px;font-size: 12px; padding-right:20px; display: inline;">DISKETTE RECEIVED</p> <br/> <br/>                             
+                                        <p style="padding-top:20px; line-height:0.01; font-size: 12px; padding-left:30px; display: inline;">AMOUNT RECEIVED $_______________________</p>
+                                        <p style="padding-top:40px; line-height:0.01; display: inline; font-size: 12px;">RECEIPT NO. __________________________</p>
+                                        <p style="padding-top:10px; line-height:0.01; font-size: 12px; display: inline; padding-left:120px;">____________________________________</p>
+                                        <p style="padding-top:10px; line-height:0.01; font-size: 12px; padding-left:630px;">SIGNATURE OF CSR</p>
+                                    </div>
+                                </table>
+                            </div>  
+                        </div>
+                        <div class="row" style="page-break-before: always;" >
+                        <h4>
+                            <p style="float: left; width: 250px; text-align: right; font-weight: bold; display:inline; line-height:0.01; font-size: 15px;">2/NI 187</p>
+                        </h4>                       
+                        </div>
+                        <div class="col-12" style="border: 2px solid black; border-radius: 10px; padding: 10px;">
+                        <p style="float: left; text-align: right; font-weight: bold; line-height:0.01; font-size: 12px;"><u>SECTION "F" -  DETAILS OF PAYMENTS FOR PERIODS EXCEEDING ONE MONTH</u></p> <br/>
+                        <p style="line-height:0.01; font-size: 12px; float: left; ">FROM</p>
+                        <p style="line-height:0.01; font-size: 12px; float: left; padding-left:40px;">TO</p>
+                        <br/>
+                        <table>
+                        <tr>
+                            <th rowspan="2" style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">YR/MTH/DAY
+                            </th>
+                            <th rowspan="2" style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">YR/MTH/DAY
+                            </th>
+                            <th colspan="2" style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">CONTRIBUTIONS<br/>DUR
+                            </th>
+                            <th colspan="2" style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">PENALTY
+                            </th>
+                            <th colspan="2" style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">INTREST
+                            </th>
+                            <th colspan="2" style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">TOTAL
+                            </th>
+                            <th colspan="2" style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">NO. OF<br/>EMPLOYEES
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">FOR OFFICIAL USE
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">$
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">C
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">$
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">C
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">$
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">C
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">$
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">C
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">$
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">C
+                            </th>
+                            <th style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;">TRANSACTION SLIP #
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 12px; font-weight: normal; padding-left:5px; padding-right:5px;"><span t-esc="empty_value">&#160;</span>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                            <td><text></text>
+                            </td>
+                        </tr>
+                        </table>
+                        </div>                                                 
                     </div>
                 </t>
             </t>
         </template>
     </data>
 </odoo>
+                   

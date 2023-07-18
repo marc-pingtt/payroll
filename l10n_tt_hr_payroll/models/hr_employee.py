@@ -7,7 +7,7 @@ class HrEmployee(models.Model):
     _description = 'Employee'
 
     bir_file_number = fields.Char('BIR File Number')
-    nis_number = fields.Char('NIS Number')
+    nis_number = fields.Char('NIS Number', size=8)
     age = fields.Integer(string="Age", compute="_compute_age")
     birthday = fields.Date(
         'Date of Birth', required=True)

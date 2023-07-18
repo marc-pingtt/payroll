@@ -1,4 +1,8 @@
-from odoo import fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
+from datetime import datetime, timedelta, date
+import calendar
+from decimal import Decimal
 from dateutil.relativedelta import relativedelta
 
 
@@ -7,18 +11,17 @@ class NisReportWizard(models.TransientModel):
     _description = 'NIS Report'
 
     employee_ids = fields.Many2many('hr.employee', string='Employees')
-    # year = fields.Selection([(str(y), str(y)) for y in range(1990, datetime.now().year + 1)], 'Year', required=True)
-    # month = fields.Selection([('1', 'January'), ('2', 'February'), ('3', 'arch'), ('4', 'April'),
-    #                          ('5', 'May'), ('6', 'June'), ('7', 'July'), ('8', 'August'),
-    #                          ('9', 'September'), ('10', 'October'), ('11', 'November'), ('12', 'December')], 'Month')
-    date_start = fields.Date('Start Period', required=True,
-                             default=lambda self: (fields.Date.today() - relativedelta(years=0)).replace(month=1,
-                                                                                                         day=1),
-                             help="Start date of the period to consider.")
-    date_end = fields.Date('End Period', required=True,
-                           default=lambda self: (fields.Date.today() - relativedelta(years=0)).replace(month=12,
-                                                                                                       day=31),
-                           help="End date of the period to consider.")
+    date_start = fields.Date('Start Period', required=True)
+    date_end = fields.Date('End Period')
+
+    @api.onchange("date_start")
+    def compute_date_end(self):
+        if (self.date_start != False):
+            last_day = calendar.monthrange(
+                self.date_start.year, self.date_start.month)[1]
+            self.date_end = date(
+                self.date_start.year, self.date_start.month, last_day)
+
     all_employees = fields.Boolean('All Employees ?')
 
     def print(self):
